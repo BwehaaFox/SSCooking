@@ -9,6 +9,9 @@ module.exports = function (defaults) {
       includePaths: ['node_modules/bulma'],
       extension: 'scss',
     },
+    fingerprint: {
+      exclude: ['img/'],
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
