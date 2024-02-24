@@ -20,7 +20,7 @@ export default class TextFieldComponent extends Component<Args> {
         ? undefined
         : this.args.type == 'number'
         ? parseInt(e.target.value)
-        : e.target.value
+        : e.target.value.trim()
     );
   }
   @action

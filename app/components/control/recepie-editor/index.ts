@@ -96,7 +96,13 @@ export default class RecepieEditorComponent extends Component<Args> {
 
   @action
   onSave() {
-    if (!this.recepie.id) return;
+    if (!this.recepie.id) {
+      if (this.recepie.name) {
+        this.recepie.id = this.recepie.name.toLowerCase().replace(/ /gi, '_');
+      } else {
+        return;
+      }
+    }
     if (
       this.recepies.recepies_list.find((r) => r.id == this.recepie.id) &&
       !this.args.canSaveDublicate
