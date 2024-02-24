@@ -1,0 +1,9 @@
+{
+  "name": "simple-scss-modules",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+
+  }
+}

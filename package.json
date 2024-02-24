@@ -27,6 +27,8 @@
     "@ember/test-helpers": "^2.8.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.2",
@@ -38,6 +40,7 @@
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-cli-typescript": "^5.2.1",
     "ember-data": "~4.4.0",
     "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
@@ -58,12 +61,30 @@
     "prettier": "^2.7.1",
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
+    "sass": "^1.71.1",
     "webpack": "^5.74.0"
   },
   "engines": {
     "node": "14.* || >= 16"
   },
+  "ember-addon": {
+    "paths": [
+      "lib/clear-template",
+      "lib/insert-component-path",
+      "lib/prepare-helper-context-for-set",
+      "lib/simple-scss-modules"
+    ]
+  },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "ember-cli-sass": "^11.0.1",
+    "ember-composable-helpers": "^5.0.0",
+    "ember-set-helper": "^3.0.1",
+    "ember-truth-helpers": "^4.0.3",
+    "front-matter": "^4.0.2",
+    "typescript": "^5.3.3"
   }
 }

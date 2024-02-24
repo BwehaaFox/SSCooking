@@ -4,12 +4,21 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'sscooking',
     environment,
-    rootURL: '/',
-    locationType: 'history',
+    rootURL: process.env.EMBER_CLI_ELECTRON ? '' : '/',
+    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'history',
+    modulePrefix: 'sscooking',
+    podModulePrefix: 'sscooking/pods',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+      },
+    },
+
+    'simple-scss-modules': {
+      folders: {
+        components: 'app/components',
+        pods: 'app/pods',
       },
     },
 

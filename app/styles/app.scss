@@ -1,0 +1,85 @@
+@import "bulma";
+
+.test {
+  background: red;
+}
+
+
+.recepie-tree {
+  &__columns {
+    flex-wrap: nowrap;
+    display: flex
+  }
+
+  &__column {
+    padding-top: 50px;
+    flex-grow: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 34px;
+      width: 100%;
+      background: red;
+      height: 1px
+    }
+
+
+
+    &:first-child {
+      &:before {
+        width: 50%;
+        right: 0
+      }
+    }
+    &:last-child {
+      &:before {
+        width: 50%;
+        left: 0
+      }
+    }
+    &:first-child:last-child {
+      &:before {
+        width: 0;
+      }
+    }
+  }
+
+  &__recepie {
+    max-width: 300px;
+    min-width: 300px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -23px;
+      height: 19px;
+      background: red;
+      width: 1px;
+      left: 50%
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      height: 13px;
+      background: red;
+      width: 1px;
+      left: 50%
+    }
+
+    &:last-child {
+      &::after {
+        background: transparent
+      }
+    }
+  }
+}
+
+
+@import "_simple-modules";

@@ -1,0 +1,23 @@
+<div class='field'>
+  {{#if @label}}
+    <label class='label'>{{@label}}</label>
+  {{/if}}
+
+  <div class='control'>
+    <div class='select'>
+      <select {{on 'change' this.onChange}}>
+        {{!-- {{log '@options' @options}} --}}
+        {{#each @options key='@index' as |item|}}
+          {{!-- {{log 'item' item}} --}}
+          <option
+            name={{get item @idKey}}
+            selected={{if @idKey (eq @value.id item.id) (eq @value item)}}
+          >{{log
+              'or (get item @nameKey) item'
+              (or (get item @nameKey) item)
+            }}{{or (get item @nameKey) item}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+</div>

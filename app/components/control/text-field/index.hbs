@@ -1,0 +1,27 @@
+<div class='field'>
+  {{#if @label}}
+    <label class='label'>{{@label}}</label>
+  {{/if}}
+
+  <div class='control'>
+    {{#if @isTextarea}}
+      <textarea
+        class='textarea'
+        {{on 'change' this.onChange}}
+        {{on 'input' this.onInput}}
+        placeholder={{@placeholder}}
+        ...attributes
+      >{{@value}}</textarea>
+    {{else}}
+      <input
+        class='input'
+        value={{@value}}
+        type={{@type}}
+        {{on 'change' this.onChange}}
+        {{on 'input' this.onInput}}
+        placeholder={{@placeholder}}
+        ...attributes
+      />
+    {{/if}}
+  </div>
+</div>

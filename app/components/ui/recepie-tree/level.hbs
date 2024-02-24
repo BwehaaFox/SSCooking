@@ -1,0 +1,18 @@
+{{log '@data' @data}}
+<Ui::Recepie
+  @data={{@data.recepie}}
+  @multy={{@data.count}}
+  class='recepie-tree__recepie'
+/>
+{{#if @data.childs.length}}
+  <div class='columns is-centered recepie-tree__columns'>
+    {{#each @data.childs as |item|}}
+      <div class='column recepie-tree__column'>
+        <Ui::RecepieTree::Level @data={{item}} />
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
+{{!-- {{#let (recepie @id) as |rec|}}
+  <Ui::Recepie
+{{/let}} --}}

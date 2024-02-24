@@ -1,0 +1,63 @@
+<Ui::Card
+  @title={{concat
+    (or @data.locale @data.name)
+    ' ('
+    (this.mult @data.count (or @multy 1))
+    ')'
+  }}
+  @titleClick={{fn (optional @onRecepie) @data.id}}
+  @disabled_content={{not @data.ingredients}}
+  ...attributes
+>
+  <:title>
+    {{#unless this.disabledTools}}
+      <span>
+        {{#if @data.timer}}
+          <span
+            style='    position: relative;
+    top: -8px;
+    right: 2px;'
+          >
+            {{@data.timer}}c
+          </span>
+        {{/if}}
+        <img
+          src={{this.src}}
+          style='margin-top: 8px;
+    margin-right: 10px;'
+        />
+      </span>
+    {{/unless}}
+  </:title>
+  <:content>
+    {{#if @data.ingredients}}
+      {{#each @data.ingredients as |item|}}
+        <div {{on 'click' (fn (optional @onRecepie) item.id)}}>
+          {{#let (recepie item.id) as |ingredient|}}
+            {{ingredient.locale}}
+
+            {{#if (and @multy (not-eq @multy 1))}}
+              ({{this.mult @data.count (or @multy 1)}}
+              /
+              {{@data.count}}
+              =
+              {{this.mult item.count @multy}})
+            {{else}}
+              ({{item.count}})
+            {{/if}}
+          {{/let}}
+
+        </div>
+      {{/each}}
+    {{else}}
+
+    {{/if}}
+  </:content>
+  <:footer as |Item|>
+    {{#if @edit_mode}}
+      <Item @title='Редактировать' @onClick={{this.edit}} />
+      <Item @title='Удалить' @onClick={{this.delete}} />
+    {{/if}}
+
+  </:footer>
+</Ui::Card>

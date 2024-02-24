@@ -1,0 +1,16 @@
+<div
+  style='background: white; position: fixed; top: 0; bottom: 0; left: 0; right: 0; overflow: scroll'
+><br />
+  <div style='text-align: center;'>
+    <Ui::Button @onClick={{this.back}} @title='Закрыть' />
+  </div>
+  {{#if this.tree}}
+
+    <div class='columns is-centered recepie-tree__columns'>
+      <div class='column recepie-tree__column'>
+        <Ui::RecepieTree::Level @data={{this.tree}} />
+      </div>
+    </div>
+  {{/if}}
+
+</div>

@@ -1,0 +1,22 @@
+sdfddd<div
+  style='background: white; position: fixed; top: 0; bottom: 0; left: 0; right: 0; overflow: scroll'
+><br />
+  <div style='text-align: center;'>
+    <Ui::Button @onClick={{this.back}} @title='Закрыть' />
+  </div>
+  <div class='div' style='width: 800px; padding: 20px; margin: 0 auto'>
+    <Control::TextField
+      @isTextarea={{true}}
+      @onChange={{set this.import_data}}
+    />
+    <Control::SelectField
+      @options={{this.options}}
+      @idKey='id'
+      @nameKey='name'
+      @label='Режим загрузки'
+      @onChange={{this.setMode}}
+      @value={{this.import_mode}}
+    />
+    <Ui::Button @onClick={{this.startImport}} @title='Начать импорт' />
+  </div>
+</div>
