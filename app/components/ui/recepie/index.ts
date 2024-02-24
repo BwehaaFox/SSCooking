@@ -37,7 +37,6 @@ export default class RecepieComponent extends Component<Args> {
         cache_img[this.args.data.tool] = b.src;
       };
       b.onerror = () => {
-        console.log('cache_img', cache_img);
         this.disabledTools = true;
       };
     };

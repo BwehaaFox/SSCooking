@@ -80,6 +80,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "@ember/render-modifiers": "^2.1.0",
     "bulma": "^0.9.4",
     "electron": "^29.0.1",
     "ember-cli-sass": "^11.0.1",

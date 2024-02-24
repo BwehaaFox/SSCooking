@@ -24,7 +24,9 @@ export default class RecepieEditorComponent extends Component<Args> {
     'none',
   ];
 
-  @tracked recepie = {} as Recepie;
+  @tracked recepie = {
+    count: 1,
+  } as Recepie;
   @tracked ingridients;
 
   constructor(owner, args: Args) {
