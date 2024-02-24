@@ -4,8 +4,16 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'sscooking',
     environment,
-    rootURL: process.env.EMBER_CLI_ELECTRON ? '' : '/',
-    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'history',
+    rootURL: process.env.EMBER_CLI_ELECTRON
+      ? ''
+      : process.env.EMBER_CLI_ELECTRON
+      ? ''
+      : '/',
+    locationType: process.env.EMBER_CLI_ELECTRON
+      ? 'hash'
+      : process.env.EMBER_CLI_ELECTRON
+      ? 'hash'
+      : 'history',
     modulePrefix: 'sscooking',
     podModulePrefix: 'sscooking/pods',
     EmberENV: {

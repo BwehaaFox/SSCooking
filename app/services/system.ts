@@ -1,6 +1,7 @@
 import RecepieService from 'sscooking/services/recepies';
 import Service from '@ember/service';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
 function download(strData, strFileName, strMimeType) {
   var D = document,
@@ -68,6 +69,7 @@ function download(strData, strFileName, strMimeType) {
 export default class SystemService extends Service {
   @service recepies!: RecepieService;
 
+  @action
   downloadActualData() {
     download(
       JSON.stringify({ cook: this.recepies.recepies_list }),

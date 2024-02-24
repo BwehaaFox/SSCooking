@@ -40,4 +40,19 @@ export default class ApplicationController extends Controller {
   openRecepieTree(id) {
     this.router.transitionTo('recepies.tree', id);
   }
+
+  @action
+  create() {
+    this.router.transitionTo('recepies.create');
+  }
+
+  @action
+  import() {
+    this.router.transitionTo('recepies.import');
+  }
+
+  @action
+  getChanges() {
+    this.recepies.saveRecepies();
+  }
 }

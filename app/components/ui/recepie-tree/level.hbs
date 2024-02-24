@@ -5,7 +5,7 @@
   class='recepie-tree__recepie'
 />
 {{#if @data.childs.length}}
-  <div class='columns is-centered recepie-tree__columns'>
+  <div class='columns recepie-tree__columns' style='max-width: 100vw;'>
     {{#each @data.childs as |item|}}
       <div class='column recepie-tree__column'>
         <Ui::RecepieTree::Level @data={{item}} />

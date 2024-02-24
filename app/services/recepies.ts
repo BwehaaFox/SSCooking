@@ -3,6 +3,7 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import SystemService from './system';
 
 export interface Recepie {
   id: string;
@@ -25,24 +26,67 @@ export interface Ingridient {
   count: number;
 }
 
+const { ipcRenderer } = window.require('electron');
+
 export default class RecepieService extends Service {
   @service recepies!: RecepieService;
+  @service system!: SystemService;
+  // @service electron;
   @tracked recepies_list: Recepie[] = [];
 
   @tracked has_changes = false;
 
   @tracked edit_state = false;
 
+  @tracked isApp = window.ELECTRON as boolean;
+
   async initialize() {
-    const res = await fetch('/recepies.json');
-    await res.text().then((data) => {
+    if (this.isApp) {
+      ipcRenderer.on('get-recepie', (event, settings) => {
+        try {
+          this.import(
+            typeof settings == 'string'
+              ? JSON.parse(settings).cook
+              : settings.cook || [],
+            0
+          );
+        } catch (e) {
+          console.log('get-recepie', e);
+          alert('Ошибка загрузки данных');
+        }
+      });
+      ipcRenderer.send('request-recepie');
+    } else {
+      const res = await fetch('/recepies.json');
+      await res.text().then((data) => {
+        try {
+          this.recepies_list = JSON.parse(data).cook;
+        } catch (e) {
+          this.recepies_list = [];
+        }
+        console.log(this.recepies_list);
+      });
+    }
+  }
+
+  @action
+  saveRecepies() {
+    if (this.isApp) {
       try {
-        this.recepies_list = JSON.parse(data).cook;
+        ipcRenderer.invoke(
+          'save-recepies',
+          JSON.stringify({
+            cook: this.recepies_list,
+          })
+        );
+
+        this.has_changes = false;
       } catch (e) {
-        this.recepies_list = [];
+        alert('Не удалось сохранить');
       }
-      console.log(this.recepies_list);
-    });
+    } else {
+      this.system.downloadActualData();
+    }
   }
 
   get recepies_groups() {

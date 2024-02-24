@@ -4,7 +4,9 @@ import RecepieService from 'sscooking/services/recepies';
 
 export default class ApplicationRoute extends Route {
   @service recepies!: RecepieService;
-  async model() {
+  @service router;
+  async model(param, transition) {
     await this.recepies.initialize();
+    this.router.transitionTo('recepies');
   }
 }
