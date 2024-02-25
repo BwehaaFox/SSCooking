@@ -210,15 +210,16 @@ export default class RecepieService extends Service {
     let recepie = this.getRecepie(id);
     if (!recepie) return;
 
-    let buildTree = (parent: Recepie) => {
+    let buildTree = (parent: Recepie, mult = 1) => {
       if (parent.ingredients) {
         return parent.ingredients.map((i) => {
-          const r = this.getRecepie(i.id);
+          const r = { ...this.getRecepie(i.id) } as Recepie;
           if (!r) return;
+          let need_cnt = (i.count || 1) / (r.count || 1);
           return {
             recepie: r,
-            count: (i.count || 1) / (r.count || 1),
-            childs: buildTree(r),
+            count: need_cnt * mult,
+            childs: buildTree(r, need_cnt),
           };
         }) as RecepieTreeItem[];
       } else {

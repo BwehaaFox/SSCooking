@@ -1,10 +1,5 @@
 <Ui::Card
-  @title={{concat
-    (or @data.locale @data.name)
-    ' ('
-    (this.mult @data.count (or @multy 1))
-    ')'
-  }}
+  @title={{concat (or @data.locale @data.name) ' (' this.final_count ')'}}
   @titleClick={{fn (optional @onRecepie) @data.id}}
   @disabled_content={{not @data.ingredients}}
   ...attributes
@@ -38,11 +33,13 @@
             {{ingredient.locale}}
 
             {{#if (and @multy (not-eq @multy 1))}}
-              ({{this.mult @data.count (or @multy 1)}}
+              ({{!-- {{this.mult @data.count (or @multy 1)}}
               /
               {{@data.count}}
-              =
-              {{this.mult item.count @multy}})
+              = --}}{{this.mult
+                item.count
+                @multy
+              }})
             {{else}}
               ({{item.count}})
             {{/if}}

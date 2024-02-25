@@ -45,9 +45,23 @@ export default class RecepieComponent extends Component<Args> {
     };
   }
 
+  get final_count() {
+    const { data, multy } = this.args;
+    const mult_count = this.mult(data.count, multy || 1);
+    const orig_count = data.count;
+    if (mult_count == orig_count) {
+      return orig_count;
+    } else {
+      return `${mult_count}/${orig_count}`;
+    }
+  }
+
   @action
   mult(a, b) {
-    return a * b;
+    const result = a * b;
+    return result.toString().split('.').length == 1
+      ? result
+      : result.toFixed(2);
   }
 
   @action
