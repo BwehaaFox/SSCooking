@@ -30,7 +30,48 @@
 
       <Control::TextField @placeholder='Поиск' @onInput={{set this.search}} />
 
-      {{#if this.search}}
+      <div class='' style='display: flex; gap: 15px; padding-bottom: 20px'>
+        <div class=''>
+          <Control::SelectField
+            @options={{this.optionSearchType}}
+            @idKey='id'
+            @nameKey='name'
+            @label='Режим поиска'
+            @onChange={{this.setSearchType}}
+            @value={{this.search_type}}
+          />
+        </div>
+        <div class=''>
+          <Control::SelectField
+            @options={{this.optionSearchGroup}}
+            @idKey='id'
+            @nameKey='name'
+            @label='Группировать поиск'
+            @onChange={{this.setSearchGroups}}
+            @value={{this.search_group}}
+          />
+        </div>
+      </div>
+
+      {{#if (or (not this.search) this.search_group.id)}}
+
+        {{#each-in this.grouped_items as |key value|}}
+          <Ui::Spoiler @title={{key}} @is_open_init={{this.search}}>
+            <div class='columns is-multiline' style='flex-grow: 1;'>
+              {{#each value key='@index' as |recepie|}}
+                <div class='column is-one-third'>
+                  <Ui::Recepie
+                    @data={{recepie}}
+                    @onRecepie={{this.openRecepieTree}}
+                    @edit_mode={{this.recepies.edit_state}}
+                  />
+                </div>
+              {{/each}}
+            </div>
+          </Ui::Spoiler>
+        {{/each-in}}
+      {{else}}
+
         <div class='columns is-multiline'>
           {{#each this.searched_items key='@index' as |recepie|}}
             <div class='column is-one-third'>
@@ -41,31 +82,12 @@
               />
             </div>
           {{else}}
-            Совпадений не найдено
+            <div class='column'>
+              Совпадений не найдено
+            </div>
+
           {{/each}}
         </div>
-      {{else}}
-
-        {{#each-in this.grouped_items as |key value|}}
-          <article class='panel is-link'>
-            <p class='panel-heading'>
-              {{key}}
-            </p>
-            <div class='panel-block'>
-              <div class='columns is-multiline' style='flex-grow: 1;'>
-                {{#each value key='@index' as |recepie|}}
-                  <div class='column is-one-third'>
-                    <Ui::Recepie
-                      @data={{recepie}}
-                      @onRecepie={{this.openRecepieTree}}
-                      @edit_mode={{this.recepies.edit_state}}
-                    />
-                  </div>
-                {{/each}}
-              </div>
-            </div>
-          </article>
-        {{/each-in}}
 
       {{/if}}
 

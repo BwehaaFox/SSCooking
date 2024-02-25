@@ -97,6 +97,73 @@ export default class RecepieService extends Service {
     return out;
   }
 
+  /**
+   * Поиск по фильтру
+   * @param search
+   * @param mode - 0 - поиск по названию
+   * @param mode - 1 - поиск по наличию хотя бы одного ингридиента в рецепте
+   * @param mode - 2 - поиск по совпадению всех ингридиентов в рецепте из переданного списка
+   * @returns
+   */
+  @action
+  getSearch(search: string, mode = 0) {
+    const { recepies_list } = this;
+    if (!search) return recepies_list;
+
+    const search_list = search
+      .split(',')
+      .map((s) => s.trim())
+      .filter((s) => s);
+
+    const includeInField = (recepie?: Recepie, ...fieldNames) => {
+      if (!recepie) return false;
+      for (let i = 0; i < fieldNames.length; i++) {
+        for (let s = 0; s < search_list.length; s++) {
+          if (
+            recepie[fieldNames[i]]
+              ?.toLocaleLowerCase()
+              .includes(search_list[s].toLocaleLowerCase())
+          )
+            return true;
+        }
+      }
+      return false;
+    };
+
+    if (!mode) {
+      return recepies_list.filter((r) =>
+        includeInField(r, 'id', 'name', 'locale')
+      );
+    } else if (mode == 1) {
+      return recepies_list.filter((r) => {
+        return r.ingredients?.find((i) => {
+          return includeInField(this.getRecepie(i.id), 'id', 'name', 'locale');
+        });
+      });
+    } else if (mode == 2) {
+      return recepies_list.filter((r) => {
+        if (!r.ingredients?.length) return false;
+        let included = 0;
+        for (let i = 0; i < r.ingredients.length; i++) {
+          if (
+            includeInField(
+              this.getRecepie(r.ingredients[i].id),
+              'id',
+              'name',
+              'locale'
+            )
+          ) {
+            included++;
+          }
+        }
+
+        return included == r.ingredients.length;
+      });
+    } else {
+      return recepies_list;
+    }
+  }
+
   @action
   getRecepie(id: string) {
     return this.recepies_list.find((r) => r.id == id);
@@ -129,6 +196,11 @@ export default class RecepieService extends Service {
       1,
       recepie
     );
+    this.recepies_list.forEach((r) => {
+      r.ingredients?.forEach((i) => {
+        if (i.id == old_id) i.id == recepie.id;
+      });
+    });
     this.recepies_list = [...this.recepies_list];
     this.has_changes = true;
   }
@@ -162,7 +234,7 @@ export default class RecepieService extends Service {
   }
 
   @action
-  import(data: Recepie[], mode) {
+  import(data: Recepie[], mode, save_trigger) {
     if (!mode) {
       this.recepies_list = data;
     } else {
@@ -179,5 +251,6 @@ export default class RecepieService extends Service {
         }
       }
     }
+    if (save_trigger) this.has_changes = true;
   }
 }

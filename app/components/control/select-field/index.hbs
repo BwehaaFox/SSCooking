@@ -48,10 +48,13 @@
       {{else}}
         <select {{on 'change' this.onChange}}>
           {{#each this.filtered_values key='@index' as |item|}}
-            {{!-- {{log 'item' item}} --}}
             <option
               name={{get item @idKey}}
-              selected={{if @idKey (eq @value.id item.id) (eq @value item)}}
+              selected={{if
+                @idKey
+                (eq @value.id (get item @idKey))
+                (eq @value item)
+              }}
             >{{or (get item @nameKey) item}}</option>
           {{/each}}
         </select>

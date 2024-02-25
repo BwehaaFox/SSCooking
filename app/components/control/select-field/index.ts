@@ -73,9 +73,10 @@ export default class SelectFieldComponent extends Component<Args> {
 
   @action
   onChange(e) {
+    let value = e.target.value;
     this.args.onChange?.(
       this.args.idKey
-        ? this.args.options.find((o) => o[this.args.nameKey] == e.target.value)[
+        ? this.args.options.find((o) => o[this.args.nameKey] == value)[
             this.args.idKey
           ]
         : e.target.value,

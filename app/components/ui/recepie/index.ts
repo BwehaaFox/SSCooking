@@ -15,13 +15,16 @@ export default class RecepieComponent extends Component<Args> {
   @service recepies!: RecepieService;
   @service router;
 
-  @tracked src = `/img/tools/${this.args.data.tool}.gif`;
+  @tracked src;
   @tracked disabledTools = false;
   constructor(owner, args) {
     super(owner, args);
 
+    if (this.args.data.tool == 'none' || !this.args.data.tool) return;
+
     if (cache_img[this.args.data.tool])
       this.src = cache_img[this.args.data.tool];
+    else this.src = `/img/tools/${this.args.data.tool}.gif`;
 
     let d = document.createElement('img');
     d.src = this.src;

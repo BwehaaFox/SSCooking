@@ -9,6 +9,59 @@ html {
 }
 
 
+.chevron {
+  position: relative;
+  &::after {
+    border: 3px solid white;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.625em;
+    margin-top: -0.2375em;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+
+    transform: rotate(-131deg);
+    transform-origin: center;
+    width: 0.625em;
+  }
+
+  &_open {
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.spoiler {
+  &__heading {
+    display: flex;
+    cursor: pointer;
+
+    &_close-fix {
+      border-radius: 6px;
+    }
+  }
+  &__title {
+    flex-grow: 1
+  }
+
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
 .recepie-tree {
   &__columns {
     flex-wrap: nowrap;

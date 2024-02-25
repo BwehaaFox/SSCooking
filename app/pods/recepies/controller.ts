@@ -11,15 +11,59 @@ export default class ApplicationController extends Controller {
   @service router;
 
   @tracked search = '';
+  @tracked search_type;
+  @tracked search_group;
 
   constructor(owner) {
     super(owner);
     this.recepies.initialize();
+    this.setSearchType(0);
+    this.setSearchGroups(false);
+  }
+  get optionSearchType() {
+    return [
+      {
+        id: 0,
+        name: 'По названию',
+      },
+      {
+        id: 1,
+        name: 'По ингридиенту',
+      },
+      {
+        id: 2,
+        name: 'По рецепту',
+      },
+    ];
+  }
+
+  get optionSearchGroup() {
+    return [
+      {
+        id: true,
+        name: 'Группировать',
+      },
+      {
+        id: false,
+        name: 'Не группировать',
+      },
+    ];
+  }
+
+  @action
+  setSearchType(option) {
+    this.search_type = this.optionSearchType.find((r) => r.id == option)!;
+  }
+
+  @action
+  setSearchGroups(option) {
+    console.log(option);
+    this.search_group = this.optionSearchGroup.find((r) => r.id == option);
   }
 
   get grouped_items() {
     let out = {};
-    this.recepies.recepies_list.forEach((value) => {
+    this.searched_items?.forEach((value) => {
       if (!out[value.group]) out[value.group] = [];
       out[value.group].push(value);
     });
@@ -27,13 +71,7 @@ export default class ApplicationController extends Controller {
   }
 
   get searched_items() {
-    if (!this.search) return this.recepies.recepies_list;
-    return this.recepies.recepies_list.filter(
-      (r) =>
-        r.id?.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) ||
-        r.name?.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) ||
-        r.locale?.toLocaleLowerCase().includes(this.search.toLocaleLowerCase())
-    );
+    return this.recepies.getSearch(this.search, this.search_type.id);
   }
 
   @action

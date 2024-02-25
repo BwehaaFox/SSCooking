@@ -1,0 +1,22 @@
+<article class='panel is-link'>
+  <p
+    class='panel-heading spoiler__heading
+      {{unless this.is_open "spoiler__heading_close-fix"}}'
+    {{on 'click' this.toggle}}
+  >
+    <div class='spoiler__title'>
+      {{@title}}
+    </div>
+    <div class='spoiler__action'>
+      <i class='chevron {{if this.is_open "chevron_open"}}'>
+
+      </i>
+    </div>
+  </p>
+  {{#if this.is_open}}
+
+    <div class='panel-block'>
+      {{yield}}
+    </div>
+  {{/if}}
+</article>
