@@ -206,6 +206,46 @@ export default class RecepieService extends Service {
   }
 
   @action
+  getIngridiensList(ingridient: RecepieTreeItem) {
+    const ingridient_list: RecepieTreeItem[] = [];
+
+    if (ingridient.childs?.length) {
+      const extractIngridient = (parent: RecepieTreeItem) => {
+        if (!parent.childs?.length) {
+          ingridient_list.push(parent);
+        } else {
+          parent.childs.forEach((ing) => {
+            extractIngridient(ing);
+          });
+        }
+      };
+      ingridient.childs.forEach((ing) => {
+        extractIngridient(ing);
+      });
+    }
+
+    const ingridient_map = ingridient_list
+      .map((r) => {
+        return { ...r.recepie, count: r.count * r.recepie.count };
+      })
+      .reduce((reducer, item) => {
+        const recepie_hash = reducer[item.id] as Recepie;
+        if (!recepie_hash) {
+          reducer[item.id] = item;
+        } else {
+          reducer[item.id] = {
+            ...recepie_hash,
+            count: recepie_hash.count + item.count,
+          };
+        }
+
+        return reducer;
+      }, {});
+
+    return Object.keys(ingridient_map).map((r) => ingridient_map[r]);
+  }
+
+  @action
   getRecepieTree(id) {
     let recepie = this.getRecepie(id);
     if (!recepie) return;

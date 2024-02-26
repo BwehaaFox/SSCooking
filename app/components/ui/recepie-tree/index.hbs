@@ -6,6 +6,20 @@
 
     <div class='columns is-centered recepie-tree__columns'>
       <div class='column recepie-tree__column'>
+        {{#if this.ingridients.length}}
+
+          <Ui::Card @title='Суммарные ингридиенты'>
+            {{#each this.ingridients as |item|}}
+              <div>
+                {{item.locale}}
+                ({{item.count}})
+              </div>
+            {{/each}}
+          </Ui::Card>
+        {{else}}
+          <Ui::Card @title='Сам себе ингридиент' />
+        {{/if}}
+        <br />
         <Ui::RecepieTree::Level @data={{this.tree}} />
       </div>
     </div>

@@ -14,7 +14,18 @@ export default class RecepieComponent extends Component<Args> {
   @service recepies!: RecepieService;
   @service router;
 
+  get ingridients() {
+    if (this.tree) {
+      return this.recepies.getIngridiensList(this.tree!);
+    } else {
+      return [];
+    }
+  }
+
   get tree() {
+    this.recepies.getIngridiensList(
+      this.recepies.getRecepieTree(this.args.recepie_id)!
+    );
     return this.recepies.getRecepieTree(this.args.recepie_id);
   }
 
