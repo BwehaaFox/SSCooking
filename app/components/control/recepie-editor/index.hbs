@@ -1,11 +1,43 @@
-sdfddd<div
-  style='background: white; position: fixed; top: 0; bottom: 0; left: 0; right: 0; overflow: scroll'
-><br />
+<div class='route-modal'><br />
   <div style='text-align: center;'>
     <Ui::Button @onClick={{this.back}} @title='Закрыть' />
   </div>
-  <div class='div' style='width: 800px; padding: 20px; margin: 0 auto'>
+  <div class='container is-max-desktop' style='margin-top: 30px'>
     <div class='columns'>
+
+      <div class='column'>
+        {{#each this.ingridients key='@index' as |item index|}}
+          <div class='box'>
+            <Control::SelectField
+              @label='Ингридиент'
+              @options={{this.ingridients_list}}
+              @idKey='id'
+              @nameKey='locale'
+              @value={{get this.ingridients index}}
+              @onChange={{fn this.setIngridientValue 'id' index}}
+              @is_search_enabled={{true}}
+            />
+            <Control::TextField
+              @placeholder='Колличество'
+              @value={{get (get this.ingridients index) 'count'}}
+              @onInput={{fn this.setIngridientValue 'count' index}}
+              @type='number'
+            />
+            <Ui::Button
+              @onClick={{fn this.removeIngridient index}}
+              @title='Удалить'
+            />
+          </div>
+        {{/each}}
+        {{#if this.has_ingridients}}
+          <div class='text-right' style='text-align: right;'>
+            <Ui::Button
+              @onClick={{this.addIngridient}}
+              @title='Добавить ингридиент'
+            />
+          </div>
+        {{/if}}
+      </div>
       <div class='column'>
         <Control::TextField
           @placeholder='ID Ингридиента'
@@ -42,51 +74,54 @@ sdfddd<div
           @onInput={{fn this.setRecepieValue 'group'}}
           @onChange={{this.setDefaultGroup}}
         />
-        <Control::SelectField
-          @label='Группа из списка'
-          @value={{this.recepie.group}}
-          @options={{this.recepies.recepies_groups}}
-          @onChange={{fn this.setRecepieValue 'group'}}
-        />
 
-        <Control::SelectField
-          @label='Инструмент'
-          @options={{this.tool_list}}
-          @value={{this.recepie.tool}}
-          @onChange={{fn this.setRecepieValue 'tool'}}
+        <div class='columns'>
+          <div class='column'>
+            <Control::SelectField
+              @label='Группа из списка'
+              @value={{this.recepie.group}}
+              @options={{this.recepies.recepies_groups}}
+              @onChange={{fn this.setRecepieValue 'group'}}
+            />
+          </div>
+          <div class='column'>
+            <Control::SelectField
+              @label='Инструмент'
+              @options={{this.tool_list}}
+              @value={{this.recepie.tool}}
+              @onChange={{fn this.setRecepieValue 'tool'}}
+            />
+          </div>
+        </div>
+
+        <Control::TextField
+          @placeholder='Описание'
+          @value={{this.recepie.description}}
+          @onInput={{fn this.setRecepieValue 'description'}}
+          @onChange={{this.setDefaultGroup}}
+          @isTextarea={{true}}
         />
 
         <Ui::Button @onClick={{this.onSave}} @title='Сохранить' />
       </div>
       <div class='column'>
-        {{#each this.ingridients key='@index' as |item index|}}
+        {{#each this.effects as |item index|}}
           <div class='box'>
-            <Control::SelectField
-              @label='Ингридиент'
-              @options={{this.recepies.recepies_list}}
-              @idKey='id'
-              @nameKey='locale'
-              @value={{get this.ingridients index}}
-              @onChange={{fn this.setIngridientValue 'id' index}}
-              @is_search_enabled={{true}}
-            />
             <Control::TextField
-              @placeholder='Колличество'
-              @value={{get (get this.ingridients index) 'count'}}
-              @onInput={{fn this.setIngridientValue 'count' index}}
-              @type='number'
+              @placeholder='Эффект'
+              @value={{get this.effects index}}
+              @onInput={{fn this.setEffectValue index}}
+              @isTextarea={{true}}
+              rows='2'
             />
             <Ui::Button
-              @onClick={{fn this.removeIngridient index}}
+              @onClick={{fn this.removeEffect index}}
               @title='Удалить'
             />
           </div>
         {{/each}}
 
-        <Ui::Button
-          @onClick={{this.addIngridient}}
-          @title='Добавить ингридиент'
-        />
+        <Ui::Button @onClick={{this.addEffect}} @title='Добавить эффект' />
       </div>
     </div>
 

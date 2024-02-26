@@ -16,7 +16,6 @@ export default class ApplicationController extends Controller {
 
   constructor(owner) {
     super(owner);
-    this.recepies.initialize();
     this.setSearchType(0);
     this.setSearchGroups(false);
   }
@@ -33,6 +32,14 @@ export default class ApplicationController extends Controller {
       {
         id: 2,
         name: 'По рецепту',
+      },
+      {
+        id: 3,
+        name: 'По эффекту',
+      },
+      {
+        id: 4,
+        name: 'По описанию',
       },
     ];
   }
@@ -71,7 +78,11 @@ export default class ApplicationController extends Controller {
   }
 
   get searched_items() {
-    return this.recepies.getSearch(this.search, this.search_type.id);
+    return this.recepies.getSearch(
+      this.search,
+      this.search_type.id,
+      this.recepies.data_name
+    );
   }
 
   @action

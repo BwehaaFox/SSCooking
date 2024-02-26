@@ -64,6 +64,19 @@
                     @data={{recepie}}
                     @onRecepie={{this.openRecepieTree}}
                     @edit_mode={{this.recepies.edit_state}}
+                    @init_open_ingridient={{and
+                      this.search
+                      (or (eq this.search_type.id 1) (eq this.search_type.id 2))
+                    }}
+                    @init_open_effect={{and
+                      this.search
+                      (eq this.search_type.id 3)
+                    }}
+                    @init_open_description={{and
+                      this.search
+                      (eq this.search_type.id 4)
+                    }}
+                    style='height: 100%;'
                   />
                 </div>
               {{/each}}
@@ -79,6 +92,16 @@
                 @data={{recepie}}
                 @onRecepie={{this.openRecepieTree}}
                 @edit_mode={{this.recepies.edit_state}}
+                @init_open_ingridient={{and
+                  this.search
+                  (or (eq this.search_type.id 1) (eq this.search_type.id 2))
+                }}
+                @init_open_effect={{and this.search (eq this.search_type.id 3)}}
+                @init_open_description={{and
+                  this.search
+                  (eq this.search_type.id 4)
+                }}
+                style='height: 100%;'
               />
             </div>
           {{else}}

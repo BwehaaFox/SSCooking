@@ -1,4 +1,4 @@
-import RecepieService from 'worols-client/services/recepies';
+import RecepieService from 'sscooking/services/recepies';
 import { Recepie } from '../../../services/recepies';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
@@ -17,8 +17,35 @@ export default class RecepieComponent extends Component<Args> {
 
   @tracked src;
   @tracked disabledTools = false;
+
+  @tracked openIngridient = false;
+  @tracked openEffect = false;
+  @tracked openDescription = false;
+
+  @action
+  toggleSpoiler(name, state) {
+    this[name] = state == undefined ? !this[name] : state;
+  }
+
+  get is_empty_content() {
+    const { ingredients, description, effects } = this.args.data;
+    return !ingredients?.length && !description && !effects?.length;
+  }
+
   constructor(owner, args) {
     super(owner, args);
+
+    if (this.args.init_open_ingridient !== undefined) {
+      this.openIngridient = this.args.init_open_ingridient;
+    }
+
+    if (this.args.init_open_effect !== undefined) {
+      this.openEffect = this.args.init_open_effect;
+    }
+
+    if (this.args.init_open_description !== undefined) {
+      this.openDescription = this.args.init_open_description;
+    }
 
     if (this.args.data.tool == 'none' || !this.args.data.tool) return;
 
@@ -57,6 +84,19 @@ export default class RecepieComponent extends Component<Args> {
   }
 
   @action
+  updateToggle(
+    e,
+    [init_open_ingridient, init_open_effect, init_open_description]
+  ) {
+    if (this.openIngridient !== init_open_ingridient)
+      this.openIngridient = init_open_ingridient;
+    if (this.openEffect !== init_open_effect)
+      this.openEffect = init_open_effect;
+    if (this.openDescription !== init_open_description)
+      this.openDescription = init_open_description;
+  }
+
+  @action
   mult(a, b) {
     const result = a * b;
     return result.toString().split('.').length == 1
@@ -71,6 +111,6 @@ export default class RecepieComponent extends Component<Args> {
 
   @action
   delete() {
-    this.recepies.deleteRecepie(this.args.data.id);
+    this.recepies.deleteRecepie(this.args.data.id, this.recepies.data_name);
   }
 }

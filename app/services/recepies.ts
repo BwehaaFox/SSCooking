@@ -5,6 +5,11 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import SystemService from './system';
 
+export interface Ingridient {
+  id: string;
+  count: number;
+}
+
 export interface Recepie {
   id: string;
   name: string;
@@ -13,6 +18,8 @@ export interface Recepie {
   group: string;
   tool: string;
   ingredients: Ingridient[];
+  effects: string[];
+  description: string;
 }
 
 export interface RecepieTreeItem {
@@ -20,19 +27,30 @@ export interface RecepieTreeItem {
   count: number;
   childs: RecepieTreeItem[];
 }
+type DataTypes = 'cook' | 'chem';
+type RecepieData = { [key in DataTypes]?: Recepie[] };
 
-export interface Ingridient {
-  id: string;
-  count: number;
-}
-
-const { ipcRenderer } = window.require('electron');
+const { ipcRenderer } = window.ELECTRON
+  ? window.require('electron')
+  : { ipcRenderer: () => {} };
 
 export default class RecepieService extends Service {
   @service recepies!: RecepieService;
   @service system!: SystemService;
+
+  @tracked recepie_data: RecepieData = {};
+
   // @service electron;
-  @tracked recepies_list: Recepie[] = [];
+  // @tracked recepies_list: Recepie[] = [];
+
+  get recepies_list() {
+    return this.recepie_data[this.data_name] as Recepie[];
+  }
+
+  set recepies_list(value) {
+    this.recepie_data[this.data_name] = value;
+    this.recepie_data = this.recepie_data;
+  }
 
   @tracked has_changes = false;
 
@@ -40,31 +58,35 @@ export default class RecepieService extends Service {
 
   @tracked isApp = window.ELECTRON as boolean;
 
+  @tracked data_name: DataTypes = 'cook';
+
   async initialize() {
+    this.loadRecepies();
+  }
+
+  @action
+  async loadRecepies() {
+    const importProcess = (data) => {
+      try {
+        this.import(
+          typeof data == 'string' ? JSON.parse(data) : data || [],
+          0,
+          false
+        );
+      } catch (e) {
+        console.log('get-recepie', e);
+        alert('Ошибка загрузки данных');
+      }
+    };
     if (this.isApp) {
       ipcRenderer.on('get-recepie', (event, settings) => {
-        try {
-          this.import(
-            typeof settings == 'string'
-              ? JSON.parse(settings).cook
-              : settings.cook || [],
-            0
-          );
-        } catch (e) {
-          console.log('get-recepie', e);
-          alert('Ошибка загрузки данных');
-        }
+        importProcess(settings);
       });
       ipcRenderer.send('request-recepie');
     } else {
       const res = await fetch('/recepies.json');
       await res.text().then((data) => {
-        try {
-          this.recepies_list = JSON.parse(data).cook;
-        } catch (e) {
-          this.recepies_list = [];
-        }
-        console.log(this.recepies_list);
+        importProcess(data);
       });
     }
   }
@@ -73,12 +95,7 @@ export default class RecepieService extends Service {
   saveRecepies() {
     if (this.isApp) {
       try {
-        ipcRenderer.invoke(
-          'save-recepies',
-          JSON.stringify({
-            cook: this.recepies_list,
-          })
-        );
+        ipcRenderer.invoke('save-recepies', JSON.stringify(this.recepie_data));
 
         this.has_changes = false;
       } catch (e) {
@@ -91,7 +108,7 @@ export default class RecepieService extends Service {
 
   get recepies_groups() {
     const out = [] as string[];
-    this.recepies_list.forEach((element) => {
+    this.recepie_data[this.data_name]?.forEach((element) => {
       if (!out.includes(element.group)) out.push(element.group);
     });
     return out;
@@ -103,11 +120,14 @@ export default class RecepieService extends Service {
    * @param mode - 0 - поиск по названию
    * @param mode - 1 - поиск по наличию хотя бы одного ингридиента в рецепте
    * @param mode - 2 - поиск по совпадению всех ингридиентов в рецепте из переданного списка
+   * @param mode - 3 - поиск по эффектам
+   * @param mode - 4 - поиск по описанию
    * @returns
    */
   @action
-  getSearch(search: string, mode = 0) {
-    const { recepies_list } = this;
+  getSearch(search: string, mode = 0, type: DataTypes) {
+    const recepies_list = this.recepie_data[type];
+    if (!recepies_list?.length) return [];
     if (!search) return recepies_list;
 
     const search_list = search
@@ -137,7 +157,12 @@ export default class RecepieService extends Service {
     } else if (mode == 1) {
       return recepies_list.filter((r) => {
         return r.ingredients?.find((i) => {
-          return includeInField(this.getRecepie(i.id), 'id', 'name', 'locale');
+          return includeInField(
+            this.getRecepie(i.id, type),
+            'id',
+            'name',
+            'locale'
+          );
         });
       });
     } else if (mode == 2) {
@@ -147,7 +172,7 @@ export default class RecepieService extends Service {
         for (let i = 0; i < r.ingredients.length; i++) {
           if (
             includeInField(
-              this.getRecepie(r.ingredients[i].id),
+              this.getRecepie(r.ingredients[i].id, type),
               'id',
               'name',
               'locale'
@@ -159,49 +184,68 @@ export default class RecepieService extends Service {
 
         return included == r.ingredients.length;
       });
+    } else if (mode == 3) {
+      const search_parts = search.trim().split(/ +/gi);
+      return recepies_list.filter((r) => {
+        for (let e = 0; e < r.effects?.length; e++) {
+          for (let p = 0; p < search_parts.length; p++) {
+            if (r.effects[e]?.includes(search_parts[p])) return true;
+          }
+        }
+        return false;
+      });
+    } else if (mode == 4) {
+      const search_parts = search.trim().split(/ +/gi);
+      return recepies_list.filter((r) => {
+        for (let p = 0; p < search_parts.length; p++) {
+          if (r.description?.includes(search_parts[p])) return true;
+        }
+        return false;
+      });
     } else {
       return recepies_list;
     }
   }
 
   @action
-  getRecepie(id: string) {
-    return this.recepies_list.find((r) => r.id == id);
+  getRecepie(id: string, type: DataTypes) {
+    return this.recepie_data[type]?.find((r) => r.id == id);
   }
 
   @action
-  createRecepie(recepie: Recepie) {
-    this.recepies_list.push(recepie);
-    this.recepies_list = [...this.recepies_list];
+  createRecepie(recepie: Recepie, type: DataTypes) {
+    if (!this.recepie_data[type]) this.recepie_data[type] = [];
+    this.recepie_data[type]!.push(recepie);
+    this.recepie_data = { ...this.recepie_data };
     this.has_changes = true;
   }
 
   @action
-  deleteRecepie(id) {
-    this.recepies.recepies_list.forEach((val) => {
+  deleteRecepie(id, type: DataTypes) {
+    this.recepie_data[type]?.forEach((val) => {
       if (val.ingredients)
         val.ingredients = val.ingredients.filter((r) => r.id !== id);
     });
-    this.recepies.recepies_list = this.recepies.recepies_list.filter(
-      (r) => r.id !== id
-    );
-    this.recepies_list = [...this.recepies_list];
+    this.recepie_data[type] =
+      this.recepie_data[type]?.filter((r) => r.id !== id) || [];
+    this.recepie_data = { ...this.recepie_data };
     this.has_changes = true;
   }
 
   @action
-  replaceRecepie(recepie: Recepie, old_id) {
-    this.recepies_list.splice(
-      this.recepies_list.findIndex((r) => r.id == old_id),
+  replaceRecepie(type: DataTypes, recepie: Recepie, old_id) {
+    if (!this.recepie_data[type]) this.recepie_data[type] = [] as Recepie[];
+    this.recepie_data[type]!.splice(
+      this.recepie_data[type]!.findIndex((r) => r.id == old_id),
       1,
       recepie
     );
-    this.recepies_list.forEach((r) => {
+    this.recepie_data[type]!.forEach((r) => {
       r.ingredients?.forEach((i) => {
         if (i.id == old_id) i.id == recepie.id;
       });
     });
-    this.recepies_list = [...this.recepies_list];
+    this.recepie_data = { ...this.recepie_data };
     this.has_changes = true;
   }
 
@@ -246,14 +290,14 @@ export default class RecepieService extends Service {
   }
 
   @action
-  getRecepieTree(id) {
-    let recepie = this.getRecepie(id);
+  getRecepieTree(id, type: DataTypes) {
+    let recepie = this.getRecepie(id, type);
     if (!recepie) return;
 
     let buildTree = (parent: Recepie, mult = 1) => {
       if (parent.ingredients) {
         return parent.ingredients.map((i) => {
-          const r = { ...this.getRecepie(i.id) } as Recepie;
+          const r = { ...this.getRecepie(i.id, type) } as Recepie;
           if (!r) return;
           let need_cnt = (i.count || 1) / (r.count || 1);
           return {
@@ -275,22 +319,28 @@ export default class RecepieService extends Service {
   }
 
   @action
-  import(data: Recepie[], mode, save_trigger) {
+  import(data: RecepieData, mode, save_trigger) {
     if (!mode) {
-      this.recepies_list = data;
+      this.recepie_data = data;
     } else {
-      const data_keys = data.map((d) => d.id);
-      const list_keys = this.recepies_list.map((d) => d.id);
-      for (let i = 0; i < data_keys.length; i++) {
-        if (list_keys.includes(data_keys[i])) {
-          this.replaceRecepie(
-            data.find((r) => r.id == data_keys[i])!,
-            data_keys[i]
-          );
-        } else {
-          this.createRecepie(data.find((r) => r.id == data_keys[i])!);
+      Object.keys(data).forEach((listKey: DataTypes) => {
+        const data_keys = data[listKey]!.map((d) => d.id);
+        const list_keys = this.recepie_data[listKey]?.map((d) => d.id) || [];
+        for (let i = 0; i < data_keys.length; i++) {
+          if (list_keys.includes(data_keys[i])) {
+            this.replaceRecepie(
+              listKey,
+              data[listKey]!.find((r) => r.id == data_keys[i])!,
+              data_keys[i]
+            );
+          } else {
+            this.createRecepie(
+              data[listKey]!.find((r) => r.id == data_keys[i])!,
+              listKey
+            );
+          }
         }
-      }
+      });
     }
     if (save_trigger) this.has_changes = true;
   }

@@ -28,6 +28,7 @@ export default class RecepieEditorComponent extends Component<Args> {
     count: 1,
   } as Recepie;
   @tracked ingridients;
+  @tracked effects: string[];
 
   constructor(owner, args: Args) {
     super(owner, args);
@@ -36,9 +37,12 @@ export default class RecepieEditorComponent extends Component<Args> {
       this.recepie.ingredients = args.data.ingredients
         ? args.data.ingredients
         : [];
+      this.recepie.effects = args.data.effects ? args.data.effects : [];
       this.ingridients = this.recepie.ingredients;
+      this.effects = this.recepie.effects;
     } else {
       this.ingridients = [];
+      this.effects = [];
     }
     if (!this.recepie.tool) {
       set(this.recepie, 'tool', 'none');
@@ -46,19 +50,39 @@ export default class RecepieEditorComponent extends Component<Args> {
     this.setDefaultGroup();
   }
 
+  get has_ingridients() {
+    return this.recepies.recepie_data[this.recepies.data_name]?.length;
+  }
+
+  get ingridients_list() {
+    return this.recepies.recepie_data[this.recepies.data_name] || [];
+  }
+
   @action
   addIngridient() {
     this.ingridients.push({
-      id: this.recepies.recepies_list[0].id,
+      id: this.recepies.recepie_data[this.recepies.data_name]?.[0].id,
       count: 1,
     });
     this.ingridients = this.ingridients;
   }
 
   @action
+  addEffect() {
+    this.effects.push('');
+    this.effects = this.effects;
+  }
+
+  @action
   removeIngridient(index) {
     this.ingridients.splice(index, 1);
     this.ingridients = this.ingridients;
+  }
+
+  @action
+  removeEffect(index) {
+    this.effects.splice(index, 1);
+    this.effects = [...this.effects];
   }
 
   @action
@@ -97,6 +121,13 @@ export default class RecepieEditorComponent extends Component<Args> {
   }
 
   @action
+  setEffectValue(index, val) {
+    this.effects[index] = val;
+
+    console.log(this.ingridients);
+  }
+
+  @action
   onSave() {
     if (!this.recepie.id) {
       if (this.recepie.name) {
@@ -106,12 +137,15 @@ export default class RecepieEditorComponent extends Component<Args> {
       }
     }
     if (
-      this.recepies.recepies_list.find((r) => r.id == this.recepie.id) &&
+      this.recepies.recepie_data[this.recepies.data_name]?.find(
+        (r) => r.id == this.recepie.id
+      ) &&
       !this.args.canSaveDublicate
     )
       return;
 
     this.recepie.ingredients = this.ingridients;
+    this.recepie.effects = this.effects;
     this.args.onSave?.({ ...this.recepie });
     this.back();
   }

@@ -1,10 +1,10 @@
 <div class='card' ...attributes>
   {{#if @title}}
 
-    <header class='card-header'>
+    <header class='card-header {{@header_class}}'>
       <p
         class='card-header-title'
-        style='margin-bottom: 0'
+        style='margin-bottom: 0; padding: 0.5rem 0.75rem'
         {{on 'click' (optional @titleClick)}}
       >
         {{@title}}
@@ -17,7 +17,7 @@
   {{#unless @disabled_content}}
     {{#if (or (has-block) (has-block 'content'))}}
 
-      <div class='card-content'>
+      <div class='card-content {{@content_class}}' style='padding: 0.75rem;'>
         <div class='content'>
           {{#if (has-block 'content')}}
             {{yield to='content'}}
@@ -28,11 +28,13 @@
       </div>
     {{/if}}
   {{/unless}}
-  {{#if (has-block 'footer')}}
-    <footer class='card-footer'>
+  {{#unless @disabled_footer}}
+    {{#if (has-block 'footer')}}
+      <footer class='card-footer'>
 
-      {{yield (component 'ui/button' class='card-footer-item') to='footer'}}
+        {{yield (component 'ui/button' class='card-footer-item') to='footer'}}
 
-    </footer>
-  {{/if}}
+      </footer>
+    {{/if}}
+  {{/unless}}
 </div>

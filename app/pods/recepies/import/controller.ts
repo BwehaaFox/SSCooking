@@ -1,4 +1,4 @@
-import RecepieService from 'worols-client/services/recepies';
+import RecepieService from 'sscooking/services/recepies';
 import { Recepie } from './../../../services/recepies';
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
@@ -36,7 +36,7 @@ export default class RecepiesImportController extends Controller {
   startImport() {
     try {
       let data = JSON.parse(this.import_data);
-      this.recepies.import(data.cook, this.import_mode, true);
+      this.recepies.import(data, this.import_mode.id, true);
       this.router.transitionTo('recepies');
     } catch (e) {
       console.log(this.import_data, this.import_mode);

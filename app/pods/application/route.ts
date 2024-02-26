@@ -7,6 +7,9 @@ export default class ApplicationRoute extends Route {
   @service router;
   async model(param, transition) {
     await this.recepies.initialize();
-    this.router.transitionTo('recepies');
+
+    if (transition.to.name == 'index') {
+      this.router.transitionTo('recepies', 'cook');
+    }
   }
 }

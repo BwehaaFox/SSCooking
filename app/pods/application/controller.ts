@@ -4,4 +4,12 @@ import { inject as service } from '@ember/service';
 import RecepieService from 'sscooking/services/recepies';
 import { action } from '@ember/object';
 
-export default class ApplicationController extends Controller {}
+export default class ApplicationController extends Controller {
+  @service recepies!: RecepieService;
+  @service router;
+
+  @action
+  goToList(type) {
+    this.router.transitionTo('recepies', type);
+  }
+}

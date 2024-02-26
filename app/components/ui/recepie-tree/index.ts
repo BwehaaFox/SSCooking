@@ -23,10 +23,10 @@ export default class RecepieComponent extends Component<Args> {
   }
 
   get tree() {
-    this.recepies.getIngridiensList(
-      this.recepies.getRecepieTree(this.args.recepie_id)!
+    return this.recepies.getRecepieTree(
+      this.args.recepie_id,
+      this.recepies.data_name
     );
-    return this.recepies.getRecepieTree(this.args.recepie_id);
   }
 
   @action

@@ -1,4 +1,4 @@
-import RecepieService from 'worols-client/services/recepies';
+import RecepieService from 'sscooking/services/recepies';
 import { Recepie } from './../../../services/recepies';
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
@@ -6,6 +6,8 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class RecepiesEditController extends Controller {
+  declare model;
+
   @service router;
   @service recepies!: RecepieService;
 
@@ -16,6 +18,6 @@ export default class RecepiesEditController extends Controller {
 
   @action
   onSaveRecepie(recepie: Recepie) {
-    this.recepies.replaceRecepie(recepie, this.model);
+    this.recepies.replaceRecepie(this.model.type, recepie, this.model.id);
   }
 }

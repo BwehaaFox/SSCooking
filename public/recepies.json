@@ -1,1 +1,2224 @@
-{"cook":[{"id":"margherita_pizza","name":"Margherita Pizza","locale":"Пицца Маргарита","count":1,"group":"Пицца","tool":"microwave","timer":30,"ingredients":[{"id":"tomato","count":4},{"id":"cheese_slice","count":1},{"id":"pizza_dough","count":1}]},{"id":"tomato","name":"Tomato","locale":"Томат","count":1,"group":"Растения"},{"id":"flour","name":"Flour","locale":"Пшено","count":1,"group":"Растения"},{"id":"universal_enzyme","name":"Universal enzyme","locale":"Универсальный фермент","count":1,"group":"Предметы"},{"id":"milk","name":"Milk","locale":"Молоко","count":1,"group":"Предметы"},{"id":"water","name":"Water","locale":"Вода","count":1,"group":"Предметы"},{"id":"meal","name":"Meal","locale":"Мука","count":5,"group":"Основное","tool":"grinder","ingredients":[{"id":"flour","count":1}]},{"id":"cheese","name":"Cheese","locale":"Головка сыра","count":1,"group":"Основное","tool":"beaker","ingredients":[{"id":"universal_enzyme","count":5},{"id":"milk","count":40}]},{"id":"dough","name":"Dough","locale":"Тесто","count":1,"group":"Основное","tool":"beaker","ingredients":[{"id":"water","count":10},{"id":"meal","count":15}]},{"id":"pizza_dough","name":"Pizza Dough","locale":"Тесто для пиццы","count":1,"group":"Основное","tool":"rolling_pin","ingredients":[{"id":"dough","count":1}]},{"id":"cheese_slice","name":"Cheese Slice","locale":"Сырный ломтик","count":1,"group":"Основное","tool":"kitchen_knife","ingredients":[{"id":"cheese","count":1}]},{"tool":"none","group":"Предметы","name":"Corn flour","id":"corn_flour","locale":"Кукурузная мука","count":1,"ingredients":[]},{"tool":"beaker","group":"Основное","locale":"Тесто тортильи","name":"Tortilla Dough","id":"tortilla_dough","count":1,"ingredients":[{"id":"corn_flour","count":15},{"id":"water","count":10}]},{"tool":"none","group":"Растения","locale":"Сырое яйцо","name":"Raw Egg","id":"raw_egg","count":1,"ingredients":[]},{"tool":"beaker","group":"Основное","id":"cornmeal_dough","locale":"Кукурузное тесто","name":"Cornmeal Dough","count":1,"ingredients":[{"id":"corn_flour","count":15},{"id":"milk","count":10},{"id":"raw_egg","count":6}]},{"tool":"none","group":"Предметы","locale":"Столовая соль","name":"Table salt","id":"table_salt","count":1,"ingredients":[]},{"tool":"beaker","group":"Основное","name":"Pie Dough","id":"pie_dough","locale":"Тесто для пирога","count":1,"ingredients":[{"id":"raw_egg","count":12},{"id":"meal","count":15},{"id":"table_salt","count":5}]},{"tool":"none","group":"Растения","locale":"Соевые бобы","name":"Soya beans","id":"soya_beans","count":1,"ingredients":[]},{"tool":"grinder","group":"Основное","locale":"Соевое молоко","name":"Soymilk","id":"soymilk","count":5,"ingredients":[{"id":"soya_beans","count":1}]},{"tool":"beaker","group":"Основное","locale":"Тофу","name":"Tofu","id":"tofu","count":1,"ingredients":[{"id":"soymilk","count":30},{"id":"universal_enzyme","count":5}]},{"tool":"grinder","group":"Основное","locale":"Непрожаренные животные протеины","name":"Uncooked animal proteins","id":"UAP","count":9,"ingredients":[{"id":"meat","count":1}]},{"tool":"beaker","group":"Основное","name":"Meatball","id":"meatball","locale":"Фрикаделька","count":1,"ingredients":[{"id":"raw_egg","count":6},{"id":"uncooked_animal_proteins","count":5},{"id":"meal","count":5}]},{"tool":"none","group":"Предметы","id":"meat","name":"Meat","locale":"Мясо","count":1,"ingredients":[]},{"tool":"kitchen_knife","group":"Основное","name":"Dough Slice","id":"dough_slice","locale":"Кусочек теста","count":1,"ingredients":[{"id":"dough","count":1}]},{"tool":"microwave","group":"Основное","name":"Bread Bun","id":"bread_bun","locale":"Булочка","count":1,"ingredients":[{"id":"dough_slice","count":1}]},{"tool":"beaker","group":"Основное","name":"Butter","id":"butter","locale":"Кусок масла","count":1,"ingredients":[{"id":"table_salt","count":5},{"id":"milk","count":30}]},{"tool":"none","group":"Предметы","locale":"Какао-порошок","id":"сocoa_powder","name":"Cocoa Powder","count":1,"ingredients":[]},{"tool":"none","group":"Предметы","locale":"Сахар","name":"Sugar","id":"sugar","count":1,"ingredients":[]},{"tool":"beaker","group":"Основное","locale":"Плитка шоколада","name":"Сhocolate","id":"chocolate","count":1,"ingredients":[{"id":"сocoa_powder","count":4},{"id":"milk","count":2},{"id":"sugar","count":2}]},{"tool":"beaker","group":"Основное","locale":"Тесто для торта","name":"Cake Batter","id":"cake_batter","count":1,"ingredients":[{"id":"meal","count":15},{"id":"raw_egg","count":12},{"id":"sugar","count":5}]},{"tool":"beaker","group":"Основное","name":"Vegan Cake Batter","id":"vegan_cake_batter","locale":"Веджи тесто для торта","count":1,"ingredients":[{"id":"meal","count":15},{"id":"soymilk","count":15},{"id":"sugar","count":5}]},{"tool":"none","group":"Предметы","locale":"Козье молоко","name":"Goat milk","id":"goat_milk","count":1,"ingredients":[]},{"tool":"none","group":"Основное","locale":"Сыр Шевр","name":"Chevre Curdling","id":"chevre_curdling","count":1,"ingredients":[{"id":"goat_milk","count":10},{"id":"universal_enzyme","count":5}]},{"tool":"kitchen_knife","group":"Основное","locale":"Кусок теста тортильи","name":"Tortilla Dough Slice","id":"tortilla_dough_slice","count":1,"ingredients":[{"id":"dough","count":1}]},{"tool":"rolling_pin","group":"Основное","locale":"Плоское тесто тортильи","name":"Flat Tortilla Dough","id":"flat_tortilla_dough","count":1,"ingredients":[{"id":"tortilla_dough_slice","count":1}]},{"tool":"kitchen_knife","group":"Основное","name":"Chevre Disk","id":"chevre_disk","count":1,"locale":"Кусочек сыра Шевр","ingredients":[{"id":"chevre_curdling","count":1}]},{"tool":"none","group":"Предметы","locale":"Чёрный перец","name":"Black pepper","id":"black_pepper","count":1,"ingredients":[]},{"tool":"microwave","name":"Baguette","id":"baguette","locale":"Багет","count":1,"group":"Хлеб","ingredients":[{"id":"dough","count":1},{"id":"table_salt","count":5},{"id":"black_pepper","count":5}]},{"tool":"kitchen_knife","group":"Основное","name":"Baguette Slice","id":"baguette_slice","locale":"Ломтики багета","count":1,"ingredients":[{"id":"baguette","count":1}]},{"tool":"kitchen_knife","group":"Основное","name":"Tofu Slice","id":"tofu_slice","locale":"Кусок тофу","count":1,"ingredients":[{"id":"tofu","count":1}]}]}
+{
+  "cook": [{
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Аварийный фальшфейер",
+    "name": "Emergency flare",
+    "id": "emergency_flare",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Амброзия",
+    "name": "Ambrosia",
+    "id": "ambrosia",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Ананас",
+    "name": "Pineapple",
+    "id": "pineapple",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Апельсин",
+    "name": "Orange",
+    "id": "orange",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Orange Cake",
+    "locale": "Апельсиновый торт",
+    "timer": 5,
+    "id": "orange_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "orange",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Аппендикс человека",
+    "name": "Human appendix",
+    "id": "human_appendix",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Арбуз",
+    "name": "Watermelon",
+    "id": "watermelon",
+    "ingredients": []
+  }, {
+    "tool": "microwave",
+    "name": "Baguette",
+    "id": "baguette",
+    "locale": "Багет",
+    "count": 1,
+    "group": "Хлеб",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "table_salt",
+      "count": 5
+    }, {
+      "id": "black_pepper",
+      "count": 5
+    }],
+    "timer": 15
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Баклажан",
+    "name": "Eggplant",
+    "id": "eggplant",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Банан",
+    "name": "Banana",
+    "id": "banana",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "locale": "Банановый пирог",
+    "name": "Banana Cream Pie",
+    "timer": 15,
+    "id": "banana_cream_pie",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "banana",
+      "count": 3
+    }, {
+      "id": "pie_pan",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Banana Bread",
+    "id": "banana_bread",
+    "locale": "Банановый хлеб",
+    "count": 1,
+    "timer": 15,
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "banana",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Сrazy hamburger",
+    "locale": "Безумный гамбургер",
+    "timer": 15,
+    "id": "сrazy_hamburger",
+    "ingredients": [{
+      "id": "olive_oil",
+      "count": 15
+    }, {
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }, {
+      "id": "chile",
+      "count": 1
+    }, {
+      "id": "cabbage",
+      "count": 1
+    }, {
+      "id": "green_chalk",
+      "count": 1
+    }, {
+      "id": "emergency_flare",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Бейсбольная бита",
+    "name": "Baseball bat",
+    "id": "baseball_bat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Big Bite Burger",
+    "locale": "Большой бургер",
+    "timer": 15,
+    "id": "big_bite_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }, {
+      "id": "tomato",
+      "count": 1
+    }, {
+      "id": "onion_slice",
+      "count": 2
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Brain Burger",
+    "locale": "Брaйн бургер",
+    "timer": 10,
+    "id": "brain_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "human_brain",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Основное",
+    "name": "Bread Bun",
+    "id": "bread_bun",
+    "locale": "Булочка",
+    "count": 1,
+    "ingredients": [{
+      "id": "dough_slice",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Plain Burger",
+    "locale": "Бургер",
+    "count": 1,
+    "timer": 10,
+    "id": "plain_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Fillet -o- Carp Burger",
+    "id": "fillet_carp_burger",
+    "locale": "Бургер из карпа",
+    "timer": 10,
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "raw_carp_fillet",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Bacon burger",
+    "locale": "Бургер с беконом",
+    "timer": 10,
+    "id": "bacon_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": " raw_cutlet",
+      "count": 3
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "name": "Vegan Cake Batter",
+    "id": "vegan_cake_batter",
+    "locale": "Веджи тесто для торта",
+    "count": 1,
+    "ingredients": [{
+      "id": "meal",
+      "count": 15
+    }, {
+      "id": "soymilk",
+      "count": 15
+    }, {
+      "id": "sugar",
+      "count": 5
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Вино",
+    "name": "Vine",
+    "count": 1,
+    "id": "vine",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Виноград",
+    "name": "Grape",
+    "id": "grape",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "name": "Grape Tart",
+    "locale": "Виноградный тарт",
+    "timer": 15,
+    "id": "grape_tart",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "sugar",
+      "count": 5
+    }, {
+      "id": "milk",
+      "count": 5
+    }, {
+      "id": "grape",
+      "count": 3
+    }]
+  }, {
+    "id": "water",
+    "name": "Water",
+    "locale": "Вода",
+    "count": 1,
+    "group": "Предметы"
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Водка",
+    "name": "Vodka",
+    "count": 1,
+    "id": "vodka",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "locale": "Гавайская пицца",
+    "name": "Hawaiian Pizza",
+    "timer": 30,
+    "id": "hawaiian_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "raw_chicken_meat",
+      "count": 3
+    }, {
+      "id": "pineapple_slice",
+      "count": 5
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Газированная вода",
+    "name": "Sparkling water",
+    "id": "sparkling_water",
+    "ingredients": []
+  }, {
+    "id": "cheese",
+    "name": "Cheese",
+    "locale": "Головка сыра",
+    "count": 1,
+    "group": "Основное",
+    "tool": "beaker",
+    "ingredients": [{
+      "id": "universal_enzyme",
+      "count": 5
+    }, {
+      "id": "milk",
+      "count": 40
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "name": "Mushroom Pizza",
+    "locale": "Грибная Пицца",
+    "timer": 25,
+    "id": "mushroom_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "chanterelle",
+      "count": 5
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "locale": "Данк пицца",
+    "name": "Dank Pizza",
+    "timer": 30,
+    "id": "dank_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "ambrosia",
+      "count": 3
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }, {
+      "id": "tomato",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Two Slice",
+    "locale": "Два ломтика",
+    "count": 1,
+    "timer": 5,
+    "id": "two_slice",
+    "ingredients": [{
+      "id": "vine",
+      "count": 5
+    }, {
+      "id": "piece_of_bread",
+      "count": 2
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "name": "Donk Pocket Pizza",
+    "locale": "Донк пицца",
+    "timer": 30,
+    "id": "donk_pocket_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "donk_pocket_warm",
+      "count": 3
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }, {
+      "id": "tomato",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Донк-Покет (тёплый)",
+    "name": "Donk-Pocket (warm)",
+    "id": "donk_pocket_warm",
+    "ingredients": []
+  }, {
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Jelly Burger",
+    "locale": "Желе бургер",
+    "count": 1,
+    "timer": 10,
+    "id": "jelly_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "amanita_jelly",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "locale": "Желе из мухомора",
+    "name": "Amanita Jelly",
+    "count": 1,
+    "timer": 10,
+    "group": "Разное",
+    "id": "amanita_jelly",
+    "ingredients": [{
+      "id": "water",
+      "count": 5
+    }, {
+      "id": "vodka",
+      "count": 5
+    }, {
+      "id": "agaric",
+      "count": 3
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Jelly Toast",
+    "locale": "Желейный тост",
+    "count": 1,
+    "timer": 5,
+    "id": "jelly_toast",
+    "ingredients": [{
+      "id": "piece_of_bread",
+      "count": 1
+    }, {
+      "id": "amanita_jelly",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Spell burger",
+    "locale": "Заколдованный бургер",
+    "timer": 10,
+    "id": "spell_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "mage_hat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Empowered Burger",
+    "locale": "Заряженный бургер",
+    "timer": 10,
+    "id": "empowered_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "plasma",
+      "count": 2
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Зеленый мелок",
+    "name": "Green chalk",
+    "id": "green_chalk",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Какао-порошок",
+    "id": "сocoa_powder",
+    "name": "Cocoa Powder",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Капуста",
+    "name": "Cabbage",
+    "id": "cabbage",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Clown burger",
+    "locale": "Кловнбургер",
+    "timer": 10,
+    "id": "clown_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "clown_mask",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Clown Cake",
+    "locale": "Клоунский торт",
+    "timer": 5,
+    "id": "clown_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "clown_mask",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Козье молоко",
+    "name": "Goat milk",
+    "id": "goat_milk",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Конденсатор",
+    "name": "Capacitor",
+    "count": 1,
+    "id": "capacitor",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "locale": "Коргбургер",
+    "name": "Сurger",
+    "timer": 10,
+    "id": "сurger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "prime_corgi_meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "locale": "Котбургер",
+    "name": "Cat burger",
+    "timer": 10,
+    "id": "cat_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 1
+    }, {
+      "id": "cat_ears",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Кошачьи ушки",
+    "name": "Cat ears",
+    "id": "cat_ears",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Сrab burger",
+    "locale": "Краббургер",
+    "timer": 10,
+    "id": "сrab_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "raw_crab_meat",
+      "count": 2
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Ratburger",
+    "locale": "Крысобургер",
+    "count": 1,
+    "timer": 10,
+    "id": "ratburger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "raw_rat_meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "name": "Xeno Pie",
+    "locale": "Ксено пирог",
+    "timer": 15,
+    "id": "xeno_pie",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "xeno_meat",
+      "count": 3
+    }, {
+      "id": "pie_pan",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Ксено-мясо",
+    "name": "Xeno meat",
+    "id": "xeno_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Xeno burger",
+    "locale": "Ксенобургер",
+    "timer": 10,
+    "id": "xeno_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "xeno_meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Кукуруза",
+    "name": "Corn",
+    "id": "corn",
+    "ingredients": []
+  }, {
+    "tool": "grinder",
+    "group": "Основное",
+    "name": "Corn flour",
+    "id": "corn_flour",
+    "locale": "Кукурузная мука",
+    "count": 7,
+    "ingredients": [{
+      "id": "corn",
+      "count": 1
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "id": "cornmeal_dough",
+    "locale": "Кукурузное тесто",
+    "name": "Cornmeal Dough",
+    "count": 1,
+    "ingredients": [{
+      "id": "corn_flour",
+      "count": 15
+    }, {
+      "id": "milk",
+      "count": 10
+    }, {
+      "id": "raw_egg",
+      "count": 6
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "locale": "Кукурузный хлеб",
+    "name": "Corn Bread",
+    "id": "corn_bread",
+    "count": 1,
+    "timer": 10,
+    "ingredients": [{
+      "id": "cornmeal_dough",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Chicken Sandwich",
+    "locale": "Куриный бургер",
+    "timer": 10,
+    "id": "chicken_sandwich",
+    "ingredients": [{
+      "id": "mayonnaise",
+      "count": 5
+    }, {
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "raw_chicken_meat",
+      "count": 1
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "name": "Butter",
+    "id": "butter",
+    "locale": "Кусок масла",
+    "count": 1,
+    "ingredients": [{
+      "id": "table_salt",
+      "count": 5
+    }, {
+      "id": "milk",
+      "count": 30
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "locale": "Кусок теста тортильи",
+    "name": "Tortilla Dough Slice",
+    "id": "tortilla_dough_slice",
+    "count": 1,
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "name": "Tofu Slice",
+    "id": "tofu_slice",
+    "locale": "Кусок тофу",
+    "count": 1,
+    "ingredients": [{
+      "id": "tofu",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "name": "Chevre Disk",
+    "id": "chevre_disk",
+    "count": 1,
+    "locale": "Кусочек сыра Шевр",
+    "ingredients": [{
+      "id": "chevre_curdling",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "name": "Dough Slice",
+    "id": "dough_slice",
+    "locale": "Кусочек теста",
+    "count": 3,
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Лайм",
+    "name": "Lime",
+    "id": "lime",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Lime Cake",
+    "locale": "Лаймовый торт",
+    "timer": 5,
+    "id": "lime_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "lime",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "name": "Lemon",
+    "locale": "Лимон",
+    "id": "lemon",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Lemon Cake",
+    "locale": "Лимоный торт",
+    "timer": 5,
+    "id": "lemon_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "lemon",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Лисички",
+    "name": "Chanterelle",
+    "id": "chanterelle",
+    "ingredients": []
+  }, {
+    "count": 5,
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "name": "Pineapple slice",
+    "locale": "Ломтик ананаса",
+    "id": "pineapple_slice",
+    "ingredients": [{
+      "id": "pineapple",
+      "count": 1
+    }]
+  }, {
+    "count": 5,
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "locale": "Ломтик Арбуза",
+    "name": "Watermelon slice",
+    "id": "watermelon_slice",
+    "ingredients": [{
+      "id": "watermelon",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "locale": "Ломтик лука",
+    "name": "Onion slice",
+    "count": 5,
+    "id": "onion_slice",
+    "ingredients": [{
+      "id": "onion",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "locale": "Ломтик хлеба",
+    "name": "Piece of bread",
+    "count": 5,
+    "id": "piece_of_bread",
+    "ingredients": [{
+      "id": "bread",
+      "count": 1
+    }]
+  }, {
+    "tool": "kitchen_knife",
+    "group": "Основное",
+    "name": "Baguette Slice",
+    "id": "baguette_slice",
+    "locale": "Ломтики багета",
+    "count": 12,
+    "ingredients": [{
+      "id": "baguette",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "name": "Onion",
+    "locale": "Лук",
+    "count": 1,
+    "id": "onion",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Майонез",
+    "name": "Mayonnaise",
+    "id": "mayonnaise",
+    "ingredients": []
+  }, {
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Mcguffin",
+    "locale": "Макгаффин",
+    "count": 1,
+    "timer": 10,
+    "id": "mcguffin",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "egg",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "McRib",
+    "locale": "Макриб",
+    "count": 1,
+    "timer": 10,
+    "id": "mcrib",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "bbq_ribs",
+      "count": 1
+    }, {
+      "id": "onion_slice",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Маска клоуна",
+    "name": "Clown mask",
+    "id": "clown_mask",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Bearger",
+    "locale": "Медве-бургер",
+    "timer": 10,
+    "id": "bearger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "bear_meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Медвежатина",
+    "name": "Bear meat",
+    "id": "bear_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Mime Burger",
+    "locale": "Мим бургер",
+    "timer": 10,
+    "id": "mime_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "mime_hat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Мозг человека",
+    "name": "Human brain",
+    "id": "human_brain",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Brain Cake",
+    "locale": "Мозговой торт",
+    "timer": 15,
+    "id": "brain_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "human_brain",
+      "count": 1
+    }]
+  }, {
+    "id": "milk",
+    "name": "Milk",
+    "locale": "Молоко",
+    "count": 1,
+    "group": "Предметы"
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Carrot Cake",
+    "locale": "Морковный торт",
+    "timer": 5,
+    "id": "carrot_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "carrot",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Морковь",
+    "name": "Carrot",
+    "id": "carrot",
+    "ingredients": []
+  }, {
+    "id": "meal",
+    "name": "Meal",
+    "locale": "Мука",
+    "count": 5,
+    "group": "Основное",
+    "tool": "grinder",
+    "ingredients": [{
+      "id": "flour",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Мухомор",
+    "name": "Agaric",
+    "count": 1,
+    "id": "agaric",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "name": "Meat Pizza",
+    "locale": "Мясная Пицца",
+    "timer": 30,
+    "id": "meat_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 3
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }, {
+      "id": "tomato",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "name": "Meat Pie",
+    "locale": "Мясной пирог",
+    "timer": 15,
+    "id": "meat_pie",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 3
+    }, {
+      "id": "pie_pan",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Meat Bread",
+    "locale": "Мясной хлеб",
+    "count": 1,
+    "timer": 15,
+    "id": "meat_bread",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": " raw_cutlet",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 3
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "id": "meat",
+    "name": "Meat",
+    "locale": "Мясо",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "tool": "grinder",
+    "group": "Основное",
+    "locale": "Непрожаренные животные протеины",
+    "name": "Uncooked animal proteins",
+    "id": "UAP",
+    "count": 9,
+    "ingredients": [{
+      "id": "meat",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Ничего",
+    "name": "Nothing",
+    "count": 1,
+    "id": "nothing",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пицца",
+    "name": "Vegetable Pizza",
+    "locale": "Овощная Пицца",
+    "timer": 30,
+    "id": "vegetable_pizza",
+    "ingredients": [{
+      "id": "pizza_dough",
+      "count": 1
+    }, {
+      "id": "eggplant",
+      "count": 1
+    }, {
+      "id": "carrot",
+      "count": 1
+    }, {
+      "id": "corn",
+      "count": 1
+    }, {
+      "id": "tomato",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Оливковое масло",
+    "name": "Olive oil",
+    "id": "olive_oil",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Five Alarm Burger",
+    "timer": 10,
+    "locale": "Острый бургер",
+    "id": "five_alarm_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 1
+    }, {
+      "id": "chile",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Первосортное мясо корги",
+    "name": "Prime Corgi Meat",
+    "id": "prime_corgi_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "name": "Amanita Pie",
+    "locale": "Пирог из мухомора",
+    "timer": 15,
+    "id": "amanita_pie",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "agaric",
+      "count": 1
+    }, {
+      "id": "pie_pan",
+      "count": 1
+    }]
+  }, {
+    "id": "margherita_pizza",
+    "name": "Margherita Pizza",
+    "locale": "Пицца Маргарита",
+    "count": 1,
+    "group": "Пицца",
+    "tool": "microwave",
+    "timer": 30,
+    "ingredients": [{
+      "id": "tomato",
+      "count": 4
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }, {
+      "id": "pizza_dough",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Плазма",
+    "name": "Plasma",
+    "id": "plasma",
+    "ingredients": []
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Плитка шоколада",
+    "name": "Сhocolate",
+    "id": "chocolate",
+    "count": 1,
+    "ingredients": [{
+      "id": "сocoa_powder",
+      "count": 4
+    }, {
+      "id": "milk",
+      "count": 2
+    }, {
+      "id": "sugar",
+      "count": 2
+    }]
+  }, {
+    "tool": "rolling_pin",
+    "group": "Основное",
+    "locale": "Плоское тесто тортильи",
+    "name": "Flat Tortilla Dough",
+    "id": "flat_tortilla_dough",
+    "count": 1,
+    "ingredients": [{
+      "id": "tortilla_dough_slice",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Birthday Cake",
+    "locale": "Праздничный торт",
+    "timer": 5,
+    "id": "birthday_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "cream",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Ghost burger",
+    "locale": "Призрачный бургер",
+    "timer": 10,
+    "id": "ghost_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "ghost_sheet",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Простыня-призрак",
+    "name": "Ghost sheet",
+    "id": "ghost_sheet",
+    "ingredients": []
+  }, {
+    "id": "flour",
+    "name": "Flour",
+    "locale": "Пшено",
+    "count": 1,
+    "group": "Растения"
+  }, {
+    "tool": "microwave",
+    "name": "BBQ Ribs",
+    "locale": "Рёбрышки барбекю",
+    "count": 1,
+    "group": "Закуски",
+    "timer": 15,
+    "id": "bbq_ribs",
+    "ingredients": [{
+      "id": "bbq_sauce",
+      "count": 5
+    }, {
+      "id": "meat",
+      "count": 2
+    }, {
+      "id": "skewer",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Roburger",
+    "locale": "Робобургер",
+    "timer": 10,
+    "id": "roburger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "capacitor",
+      "count": 2
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сахар",
+    "name": "Sugar",
+    "id": "sugar",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "French Toast",
+    "locale": "Сладкие гренки",
+    "count": 1,
+    "timer": 5,
+    "id": "french_toast",
+    "ingredients": [{
+      "id": "milk",
+      "count": 5
+    }, {
+      "id": "raw_egg",
+      "count": 12
+    }, {
+      "id": "piece_of_bread",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Slime Cake",
+    "locale": "Слаймовый торт",
+    "timer": 5,
+    "id": "slime_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "slime",
+      "count": 15
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сливки",
+    "name": "Cream",
+    "id": "cream",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Слизь",
+    "name": "Slime",
+    "id": "slime",
+    "ingredients": []
+  }, {
+    "tool": "grinder",
+    "group": "Основное",
+    "locale": "Соевое молоко",
+    "name": "Soymilk",
+    "id": "soymilk",
+    "count": 5,
+    "ingredients": [{
+      "id": "soya_beans",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Соевые бобы",
+    "name": "Soya beans",
+    "id": "soya_beans",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Soylent burger",
+    "locale": "Сойлент бургер",
+    "timer": 10,
+    "id": "soylent_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }, {
+      "id": "soya_beans",
+      "count": 2
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Sasuage Bread",
+    "locale": "Сосисочный хлеб",
+    "count": 1,
+    "timer": 15,
+    "id": "sasuage_bread",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 1
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Соус барбекю",
+    "name": "BBQ Sauce",
+    "count": 1,
+    "id": "bbq_sauce",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Столовая соль",
+    "name": "Table salt",
+    "id": "table_salt",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Super Bite Burger",
+    "locale": "Супер Большой бургер",
+    "timer": 25,
+    "id": "super_bite_burger",
+    "ingredients": [{
+      "id": "table_salt",
+      "count": 5
+    }, {
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 3
+    }, {
+      "id": "cheese_slice",
+      "count": 3
+    }, {
+      "id": "tomato",
+      "count": 3
+    }, {
+      "id": "egg",
+      "count": 2
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Сыр Шевр",
+    "name": "Chevre Curdling",
+    "id": "chevre_curdling",
+    "count": 1,
+    "ingredients": [{
+      "id": "goat_milk",
+      "count": 10
+    }, {
+      "id": "universal_enzyme",
+      "count": 5
+    }]
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырая котлета",
+    "name": " Raw cutlet",
+    "id": " raw_cutlet",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырая ксено котлета",
+    "name": "Raw xeno cutlet",
+    "count": 1,
+    "id": "raw_xeno_cutlet",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырая паучья котлета",
+    "name": "Raw spider cutlet",
+    "count": 1,
+    "id": "raw_spider_cutlet",
+    "ingredients": []
+  }, {
+    "id": "cheese_slice",
+    "name": "Cheese Slice",
+    "locale": "Сырный ломтик",
+    "count": 3,
+    "group": "Основное",
+    "tool": "kitchen_knife",
+    "ingredients": [{
+      "id": "cheese",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырое крабовое мясо",
+    "name": "Raw crab meat",
+    "id": "raw_crab_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырое куриное мясо",
+    "name": "Raw chicken meat",
+    "id": "raw_chicken_meat",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырое мясо крысы",
+    "name": "Raw rat meat",
+    "count": 1,
+    "id": "raw_rat_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырое утиное мясо",
+    "name": "Raw duck meat",
+    "id": "raw_duck_meat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Сырое филе карпа",
+    "name": "Raw carp fillet",
+    "id": "raw_carp_fillet",
+    "ingredients": []
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Сырое яйцо",
+    "name": "Raw Egg",
+    "id": "raw_egg",
+    "count": 3,
+    "ingredients": [{
+      "id": "egg",
+      "count": 1
+    }]
+  }, {
+    "id": "dough",
+    "name": "Dough",
+    "locale": "Тесто",
+    "count": 1,
+    "group": "Основное",
+    "tool": "beaker",
+    "ingredients": [{
+      "id": "water",
+      "count": 10
+    }, {
+      "id": "meal",
+      "count": 15
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "name": "Pie Dough",
+    "id": "pie_dough",
+    "locale": "Тесто для пирога",
+    "count": 1,
+    "ingredients": [{
+      "id": "raw_egg",
+      "count": 12
+    }, {
+      "id": "meal",
+      "count": 15
+    }, {
+      "id": "table_salt",
+      "count": 5
+    }]
+  }, {
+    "id": "pizza_dough",
+    "name": "Pizza Dough",
+    "locale": "Тесто для пиццы",
+    "count": 1,
+    "group": "Основное",
+    "tool": "rolling_pin",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Тесто для торта",
+    "name": "Cake Batter",
+    "id": "cake_batter",
+    "count": 1,
+    "ingredients": [{
+      "id": "meal",
+      "count": 15
+    }, {
+      "id": "raw_egg",
+      "count": 12
+    }, {
+      "id": "sugar",
+      "count": 5
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Тесто тортильи",
+    "name": "Tortilla Dough",
+    "id": "tortilla_dough",
+    "count": 1,
+    "ingredients": [{
+      "id": "corn_flour",
+      "count": 15
+    }, {
+      "id": "water",
+      "count": 10
+    }]
+  }, {
+    "id": "tomato",
+    "name": "Tomato",
+    "locale": "Томат",
+    "count": 1,
+    "group": "Растения"
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Cake",
+    "locale": "Торт",
+    "timer": 15,
+    "id": "cake",
+    "ingredients": [{
+      "id": "cake_batter",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Buttered Toast",
+    "locale": "Тост с маслом",
+    "count": 1,
+    "timer": 5,
+    "id": "buttered_toast",
+    "ingredients": [{
+      "id": "piece_of_bread",
+      "count": 1
+    }, {
+      "id": "butter",
+      "count": 1
+    }]
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "locale": "Тофу",
+    "name": "Tofu",
+    "id": "tofu",
+    "count": 1,
+    "ingredients": [{
+      "id": "soymilk",
+      "count": 30
+    }, {
+      "id": "universal_enzyme",
+      "count": 5
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Tofu Burger",
+    "locale": "Тофу бургер",
+    "timer": 10,
+    "id": "tofu_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "tofu_slice",
+      "count": 1
+    }]
+  }, {
+    "id": "universal_enzyme",
+    "name": "Universal enzyme",
+    "locale": "Универсальный фермент",
+    "count": 1,
+    "group": "Предметы"
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Duck Sandwich",
+    "locale": "Утиный бургер",
+    "timer": 10,
+    "id": "duck_sandwich",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "raw_duck_meat",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Форма для пирога",
+    "name": "Pie pan",
+    "id": "pie_pan",
+    "ingredients": []
+  }, {
+    "tool": "beaker",
+    "group": "Основное",
+    "name": "Meatball",
+    "id": "meatball",
+    "locale": "Фрикаделька",
+    "count": 1,
+    "ingredients": [{
+      "id": "raw_egg",
+      "count": 6
+    }, {
+      "id": "uncooked_animal_proteins",
+      "count": 5
+    }, {
+      "id": "meal",
+      "count": 5
+    }]
+  }, {
+    "count": 1,
+    "tool": "beaker",
+    "group": "Основное",
+    "id": "meatboll",
+    "name": "Meatball",
+    "locale": "Фрикаделька",
+    "ingredients": [{
+      "id": "raw_egg",
+      "count": 6
+    }, {
+      "id": "UAP",
+      "count": 5
+    }, {
+      "id": "meal",
+      "count": 5
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Bread",
+    "id": "bread",
+    "locale": "Хлеб",
+    "count": 1,
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }],
+    "timer": 10
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Xeno Meat Bread",
+    "locale": "Хлеб из ксено-мяса",
+    "count": 1,
+    "timer": 15,
+    "id": "xeno_meat_bread",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "raw_xeno_cutlet",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "locale": "Хлеб из паучьего мяса ",
+    "name": "Spider Meat Bread",
+    "count": 1,
+    "timer": 15,
+    "id": "spider_meat_bread",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "raw_spider_cutlet",
+      "count": 2
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Tofu Bread",
+    "locale": "Хлеб из тофу",
+    "count": 1,
+    "timer": 15,
+    "id": "tofu_bread",
+    "ingredients": [{
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "tofu",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Mimana Bread",
+    "locale": "Хлеб Мимана",
+    "count": 1,
+    "timer": 15,
+    "id": "mimana_bread",
+    "ingredients": [{
+      "id": "soymilk",
+      "count": 5
+    }, {
+      "id": "nothing",
+      "count": 5
+    }, {
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "tofu",
+      "count": 1
+    }]
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Cream Cheese Bread",
+    "id": "cream_cheese_bread",
+    "locale": "Хлеб со сливочным сыром",
+    "count": 1,
+    "timer": 15,
+    "ingredients": [{
+      "id": "milk",
+      "count": 5
+    }, {
+      "id": "dough",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 2
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Baseball burger",
+    "locale": "Хоум-ран бургер",
+    "timer": 19,
+    "id": "baseball_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "baseball_bat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Human Burger",
+    "locale": "Челбургер",
+    "timer": 10,
+    "id": "human_burger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "human_meat",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Человеческое мясо",
+    "name": "Human meat",
+    "id": "human_meat",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Чёрный перец",
+    "name": "Black pepper",
+    "id": "black_pepper",
+    "count": 1,
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Чеснок",
+    "name": "Garlic",
+    "count": 1,
+    "id": "garlic",
+    "ingredients": []
+  }, {
+    "tool": "microwave",
+    "group": "Хлеб",
+    "name": "Garlic Bread Slice",
+    "locale": "Чесночный хлеб",
+    "count": 1,
+    "timer": 5,
+    "id": "garlic_bread_slice",
+    "ingredients": [{
+      "id": "piece_of_bread",
+      "count": 1
+    }, {
+      "id": "garlic",
+      "count": 1
+    }, {
+      "id": "butter",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "name": "Cheeseburger",
+    "locale": "Чизбургер",
+    "timer": 10,
+    "id": "cheeseburger",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "meat",
+      "count": 1
+    }, {
+      "id": "cheese_slice",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Cheese Cake",
+    "locale": "Чизкейк",
+    "timer": 5,
+    "id": "cheese_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "cream",
+      "count": 10
+    }, {
+      "id": "cheese_slice",
+      "count": 3
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Чили",
+    "name": "Chile",
+    "id": "chile",
+    "ingredients": []
+  }, {
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Шампур",
+    "name": "Skewer",
+    "count": 1,
+    "id": "skewer",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Шапка мима",
+    "name": "Mime hat",
+    "id": "mime_hat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Предметы",
+    "locale": "Шляпа мага",
+    "name": "Mage hat",
+    "id": "mage_hat",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Chocolate Cake",
+    "locale": "Шоколадный торт",
+    "timer": 5,
+    "id": "chocolate_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "chocolate",
+      "count": 2
+    }]
+  }, {
+    "count": 1,
+    "tool": "none",
+    "group": "Растения",
+    "locale": "Яблоко",
+    "name": "Apple",
+    "id": "apple",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Пироги",
+    "name": "Apple Pie",
+    "locale": "Яблочный пирог",
+    "timer": 15,
+    "id": "apple_pie",
+    "ingredients": [{
+      "id": "pie_dough",
+      "count": 1
+    }, {
+      "id": "apple",
+      "count": 3
+    }, {
+      "id": "pie_pan",
+      "count": 1
+    }]
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Торты",
+    "name": "Apple Cake",
+    "locale": "Яблочный торт",
+    "timer": 5,
+    "id": "apple_cake",
+    "ingredients": [{
+      "id": "cake",
+      "count": 1
+    }, {
+      "id": "apple",
+      "count": 3
+    }]
+  }, {
+    "tool": "none",
+    "group": "Растения",
+    "name": "Egg",
+    "locale": "Яйцо",
+    "count": 1,
+    "id": "egg",
+    "ingredients": []
+  }, {
+    "count": 1,
+    "tool": "microwave",
+    "group": "Бургеры",
+    "locale": "Appendix Burger",
+    "name": "Аппендикс бургер",
+    "timer": 10,
+    "id": "аппендикс_бургер",
+    "ingredients": [{
+      "id": "bread_bun",
+      "count": 1
+    }, {
+      "id": "human_appendix",
+      "count": 1
+    }]
+  }],
+  "chem": [{
+    "count": 1,
+    "tool": "none",
+    "name": "222",
+    "locale": "333",
+    "description": "444",
+    "id": "222",
+    "ingredients": [],
+    "effects": ["111", "333"]
+  }, {
+    "count": 1,
+    "tool": "beaker",
+    "name": "543",
+    "locale": "534",
+    "description": "423rfedfsdg sdfdsf",
+    "id": "543",
+    "ingredients": [{
+      "id": "222",
+      "count": 1
+    }, {
+      "id": "222",
+      "count": 1
+    }, {
+      "id": "222",
+      "count": 1
+    }, {
+      "id": "222",
+      "count": 1
+    }],
+    "effects": ["33434", "34234", "234234"]
+  }]
+}

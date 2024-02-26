@@ -10,8 +10,8 @@ import RecepieService from 'sscooking/services/recepies';
 export default class ConfirmActionHelper extends SimpleGetterHelper {
   @service recepies!: RecepieService;
 
-  get([id]) {
-    return this.recepies.getRecepie(id);
+  get([id, type]) {
+    return this.recepies.getRecepie(id, type ? type : this.recepies.data_name);
   }
 }
 

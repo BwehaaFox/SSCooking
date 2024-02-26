@@ -1,1 +1,21 @@
+<div class='container is-max-desktop'>
+  <div class='content'>
+    <Ui::Box style='padding: 0;'>
+      <div class='tabs'>
+        <ul>
+          <li class={{if (eq this.recepies.data_name 'cook') 'is-active'}}>
+            <LinkTo @route='recepies' @model='cook'>Кулинария</LinkTo>
+          </li>
+          <li class={{if (eq this.recepies.data_name 'chem') 'is-active'}}>
+            <LinkTo @route='recepies' @model='chem'>Химия</LinkTo>
+          </li>
+        </ul>
+      </div>
+      {{!-- <div class='buttons'>
+        <Ui::Button @title='Кулинария' @onClick={{fn this.goToList 'cook'}} />
+        <Ui::Button @title='Химия' @onClick={{fn this.goToList 'chem'}} />
+      </div> --}}
+    </Ui::Box>
+  </div>
+</div>
 {{outlet}}

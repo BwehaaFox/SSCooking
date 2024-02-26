@@ -1,4 +1,4 @@
-import RecepieService from 'worols-client/services/recepies';
+import RecepieService from 'sscooking/services/recepies';
 import { Recepie } from './../../../services/recepies';
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
@@ -16,6 +16,6 @@ export default class RecepiesCreateController extends Controller {
 
   @action
   onSaveRecepie(recepie: Recepie) {
-    this.recepies.createRecepie(recepie);
+    this.recepies.createRecepie(recepie, this.recepies.data_name);
   }
 }

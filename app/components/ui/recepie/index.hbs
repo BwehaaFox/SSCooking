@@ -1,7 +1,17 @@
 <Ui::Card
   @title={{concat (or @data.locale @data.name) ' (' this.final_count ')'}}
   @titleClick={{fn (optional @onRecepie) @data.id}}
-  @disabled_content={{not @data.ingredients}}
+  @disabled_content={{this.is_empty_content}}
+  @disabled_footer={{not @edit_mode}}
+  {{did-update
+    this.updateToggle
+    @init_open_ingridient
+    @init_open_effect
+    @init_open_description
+  }}
+  @header_class={{if this.is_empty_content 'recepie-card__header'}}
+  @content_class='recepie-card__header'
+  class='recepie-card'
   ...attributes
 >
   <:title>
@@ -27,27 +37,81 @@
   </:title>
   <:content>
     {{#if @data.ingredients}}
-      {{#each @data.ingredients as |item|}}
-        <div {{on 'click' (fn (optional @onRecepie) item.id)}}>
-          {{#let (recepie item.id) as |ingredient|}}
-            {{ingredient.locale}}
+      <div
+        class='recepie-spoiler
+          {{unless this.openIngridient "recepie-spoiler_close"}}'
+      >
+        <div
+          class='recepie-spoiler__title'
+          {{on 'click' (fn this.toggleSpoiler 'openIngridient' undefined)}}
+        >
+          Рецепт
+        </div>
+        <div class='recepie-spoiler__content'>
+          {{#each @data.ingredients as |item|}}
+            <div {{on 'click' (fn (optional @onRecepie) item.id)}}>
+              {{#let (recepie item.id) as |ingredient|}}
+                {{ingredient.locale}}
 
-            {{#if (and @multy (not-eq @multy 1))}}
-              ({{!-- {{this.mult @data.count (or @multy 1)}}
+                {{#if (and @multy (not-eq @multy 1))}}
+                  ({{!-- {{this.mult @data.count (or @multy 1)}}
               /
               {{@data.count}}
               = --}}{{this.mult
-                item.count
-                @multy
-              }})
-            {{else}}
-              ({{item.count}})
-            {{/if}}
-          {{/let}}
+                    item.count
+                    @multy
+                  }})
+                {{else}}
+                  ({{item.count}})
+                {{/if}}
+              {{/let}}
 
+            </div>
+          {{/each}}
         </div>
-      {{/each}}
-    {{else}}
+      </div>
+
+    {{/if}}
+
+    {{#if @data.effects}}
+      <div
+        class='recepie-spoiler
+          {{unless this.openEffect "recepie-spoiler_close"}}'
+      >
+        <div
+          class='recepie-spoiler__title'
+          {{on 'click' (fn this.toggleSpoiler 'openEffect' undefined)}}
+        >
+          Эффекты
+        </div>
+        <div class='recepie-spoiler__content'>
+          {{#each @data.effects as |item|}}
+            <p class='recepie-card__item'>
+              {{item}}
+            </p>
+          {{/each}}
+        </div>
+      </div>
+
+    {{/if}}
+
+    {{#if @data.description}}
+      <div
+        class='recepie-spoiler
+          {{unless this.openDescription "recepie-spoiler_close"}}'
+      >
+        <div
+          class='recepie-spoiler__title'
+          {{on 'click' (fn this.toggleSpoiler 'openDescription' undefined)}}
+        >
+          Описание
+        </div>
+        <div class='recepie-spoiler__content'>
+          <div class='recepie-card__item'>
+            {{@data.description}}
+          </div>
+        </div>
+      </div>
 
     {{/if}}
   </:content>

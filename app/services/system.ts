@@ -72,7 +72,7 @@ export default class SystemService extends Service {
   @action
   downloadActualData() {
     download(
-      JSON.stringify({ cook: this.recepies.recepies_list }),
+      JSON.stringify(this.recepies.recepie_data),
       'recepies.json',
       'text/plain'
     );

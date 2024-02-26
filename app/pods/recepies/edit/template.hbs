@@ -1,5 +1,6 @@
 <Control::RecepieEditor
   @onSave={{this.onSaveRecepie}}
-  @data={{recepie this.model}}
+  @data={{recepie this.model.id}}
   @canSaveDublicate={{true}}
+  @type={{this.model.type}}
 />

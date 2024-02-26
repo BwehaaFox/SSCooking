@@ -16,7 +16,7 @@ async function saveConfig(config, cb) {
   console.log(config, configFilePath);
   const write = () => {
     const configString = JSON.stringify(config, null, 2);
-    fs.writeFileSync(configFilePath, configString);
+    fs.writeFileSync(configFilePath, config);
   };
   fs.access(configFilePath, fs.constants.F_OK, (err) => {
     if (err) {

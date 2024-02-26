@@ -1,4 +1,4 @@
-import RecepieService from 'worols-client/services/recepies';
+import RecepieService from 'sscooking/services/recepies';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 export default class RecepiesEditRoute extends Route {
@@ -6,11 +6,12 @@ export default class RecepiesEditRoute extends Route {
   @service router;
 
   model({ id }, transition) {
-    if (!this.recepies.getRecepie(id)) {
+    let type = this.paramsFor('recepies').type;
+    if (!this.recepies.getRecepie(id, type)) {
       transition.abort();
       this.router.transitionTo('recepies');
       return;
     }
-    return id;
+    return { id, type };
   }
 }
