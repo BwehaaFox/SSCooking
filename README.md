@@ -14,6 +14,7 @@
 - По описанию
 
 Возможность разбиения по группам
+
 Возможность указывать инструмент и время готовки
 
 Возможна сборка WEB версии и приложения Electron
@@ -70,7 +71,7 @@ You will need the following things properly installed on your computer.
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-#### WEB
+#### Electron
 
 * `ember electron:package`
 
