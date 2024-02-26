@@ -1,7 +1,18 @@
-# sscooking
+# SSCooking
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Приложение для хранения и систематизации рецептов для Space Station
+
+Отдельные вкладки для кулинарии и химии. 
+
+Поиск:
+- По названию рецепта
+- По ингридиенту в рецепте
+- Среди рецептов какотрые состоят из указанных ингридиентов
+- По Эффекту
+- По описанию
+
+Возможность разбиения по группам
+Возможность указывать инструмент и время готовки
 
 ## Prerequisites
 
@@ -12,21 +23,23 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://cli.emberjs.com/release/)
 * [Google Chrome](https://google.com/chrome/)
 
-## Installation
+## Установка
 
 * `git clone <repository-url>` this repository
 * `cd sscooking`
 * `npm install`
 
-## Running / Development
+## Запуск / Разработка
+
+### WEB
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
+### Electron
 
-Make use of the many generators for code, try `ember help generate` for more details
+* `ember electron`
 
 ### Running Tests
 
@@ -40,12 +53,15 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Building
 
+#### WEB
+
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+#### WEB
 
-Specify what it takes to deploy your app.
+* `ember electron:package`
+
 
 ## Further Reading / Useful Links
 
@@ -54,3 +70,6 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+  [License CC BY NC](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%B8_%D0%B8_%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_Creative_Commons#%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0)
