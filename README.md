@@ -18,7 +18,7 @@
 
 Возможна сборка WEB версии и приложения Electron
 
-![main](https://e.radikal.host/2024/02/26/image1abb65af44190adb.png)
+![main](https://e.radikal.host/2024/02/26/image365edb8f1aa4d8a7.png)
 ![tree](https://e.radikal.host/2024/02/26/image0e883a145972029e.png)
 
 
