@@ -21,6 +21,10 @@ html {
   display: flex;
   flex-direction: column;
 
+  &_no-fit {
+    height: unset;
+  }
+
   &__header {
     flex-grow: 1;
   }

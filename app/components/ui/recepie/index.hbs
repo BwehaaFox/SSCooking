@@ -11,7 +11,7 @@
   }}
   @header_class={{if this.is_empty_content 'recepie-card__header'}}
   @content_class='recepie-card__header'
-  class='recepie-card'
+  class='recepie-card {{if @no-fit "recepie-card_no-fit"}}'
   ...attributes
 >
   <:title>

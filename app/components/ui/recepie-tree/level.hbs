@@ -1,8 +1,8 @@
-{{log '@data' @data}}
 <Ui::Recepie
   @data={{@data.recepie}}
   @multy={{@data.count}}
   class='recepie-tree__recepie'
+  @no-fit={{true}}
 />
 {{#if @data.childs.length}}
   <div class='columns recepie-tree__columns' style='max-width: 100vw;'>
