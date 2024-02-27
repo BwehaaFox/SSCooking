@@ -1,10 +1,10 @@
 <div class='card' ...attributes>
   {{#if @title}}
 
-    <header class='card-header {{@header_class}}'>
+    <header class='card-header {{@header_class}}' style={{@header_style}}>
       <p
         class='card-header-title'
-        style='margin-bottom: 0; padding: 0.5rem 0.75rem'
+        style='margin-bottom: 0; padding: 0.5rem 0.75rem; color: {{@title_color}}'
         {{on 'click' (optional @titleClick)}}
       >
         {{@title}}

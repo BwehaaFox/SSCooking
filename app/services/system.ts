@@ -77,4 +77,29 @@ export default class SystemService extends Service {
       'text/plain'
     );
   }
+
+  @action
+  parseBB(text) {
+    const code_map = {
+      b: ['b'],
+      i: ['i'],
+      positive: ['span', 'class="bb-code_positive"'],
+      negative: ['span', 'class="bb-code_negative"'],
+      neutral: ['span', 'class="bb-code_neutral"'],
+      center: ['div', 'class="bb-code_center"'],
+      right: ['div', 'class="bb-code_right"'],
+    };
+
+    const parseCode = (name: keyof typeof code_map, text: string) => {
+      return text
+        .replace(`[${name}]`, `<${code_map[name][0]} ${code_map[name][1]}>`)
+        .replace(`[\/${name}]`, `<\/${code_map[name][0]}>`);
+    };
+    return Object.keys(code_map).reduce(
+      (reducer: string, key: keyof typeof code_map) => {
+        return (reducer = parseCode(key, reducer));
+      },
+      text
+    );
+  }
 }

@@ -1,0 +1,26 @@
+<div class='field'>
+  {{#if @label}}
+    <label class='label'>{{@label}}</label>
+  {{/if}}
+
+  <div class='control input-color'>
+    <input
+      class='input input-color__field'
+      value={{@value}}
+      type='text'
+      {{on 'change' this.onChange}}
+      {{on 'input' this.onInput}}
+      placeholder={{@placeholder}}
+      ...attributes
+    />
+    <input
+      class='input input-color__picker'
+      value={{@value}}
+      type='color'
+      {{on 'change' this.onChange}}
+      {{on 'input' this.onInput}}
+      placeholder={{@placeholder}}
+      ...attributes
+    />
+  </div>
+</div>

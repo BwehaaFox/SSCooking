@@ -34,7 +34,7 @@ html {
   }
 
   &__item {
-    white-space: pre-line;
+    white-space: normal;
     overflow-wrap: break-word;
     line-height: 1.4;
 
@@ -42,6 +42,40 @@ html {
       margin-bottom: 0.5rem !important;
     }
 
+  }
+}
+
+.bb-code {
+  &_positive {
+    color: green;
+  }
+  &_negative {
+    color: red;
+  }
+  &_neutral {
+    color: blue;
+  }
+  &_center {
+    text-align: center;
+  }
+  &_right {
+    text-align: right;
+  }
+}
+
+.input-color {
+  display: flex;
+
+  &__field {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__picker {
+    width: 20%;
+    padding: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 

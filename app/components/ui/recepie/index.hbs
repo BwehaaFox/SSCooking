@@ -3,6 +3,7 @@
   @titleClick={{fn (optional @onRecepie) @data.id}}
   @disabled_content={{this.is_empty_content}}
   @disabled_footer={{not @edit_mode}}
+  @title_color={{this.getContrastYIQ @data.color}}
   {{did-update
     this.updateToggle
     @init_open_ingridient
@@ -12,6 +13,7 @@
   @header_class={{if this.is_empty_content 'recepie-card__header'}}
   @content_class='recepie-card__header'
   class='recepie-card {{if @no-fit "recepie-card_no-fit"}}'
+  @header_style={{concat 'background:' @data.color}}
   ...attributes
 >
   <:title>
@@ -87,7 +89,7 @@
         <div class='recepie-spoiler__content'>
           {{#each @data.effects as |item|}}
             <p class='recepie-card__item'>
-              {{item}}
+              {{parse-bb item}}
             </p>
           {{/each}}
         </div>
@@ -108,7 +110,7 @@
         </div>
         <div class='recepie-spoiler__content'>
           <div class='recepie-card__item'>
-            {{@data.description}}
+            {{parse-bb @data.description}}
           </div>
         </div>
       </div>

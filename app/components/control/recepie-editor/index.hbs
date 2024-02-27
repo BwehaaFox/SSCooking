@@ -75,6 +75,13 @@
           @onChange={{this.setDefaultGroup}}
         />
 
+        <Control::ColorField
+          @placeholder='Цвет'
+          @value={{this.recepie.color}}
+          @onInput={{fn this.setRecepieValue 'color'}}
+          @onChange={{this.setDefaultGroup}}
+        />
+
         <div class='columns'>
           <div class='column'>
             <Control::SelectField
